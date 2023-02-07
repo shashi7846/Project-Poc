@@ -1,0 +1,14 @@
+html,
+body {
+  background-repeat: no-repeat;
+  font-family: "Numans", sans-serif;
+}
+
+body {
+  background-image: url("./Images/poc-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
