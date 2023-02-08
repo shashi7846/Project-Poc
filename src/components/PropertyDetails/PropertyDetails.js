@@ -4,16 +4,19 @@ import {
   faKey,
   faMailBulk,
   faPhone,
-  faUser,
+  faAreaChart,
+  faQuestion,
+  faMapMarker,
+  faInr,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 //import { GetuserbyEmail, Postregister } from "../../Api/Api";
 function PropertyDetails() {
-  let [username, setUsername] = useState("shashikanth");
-  let [email, setEmail] = useState("shashikanth@email.com");
-  let [password, setPassword] = useState("9080723612");
+  let [username, setUsername] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
-  let [phone, setPhone] = useState("9080723612");
+  let [phone, setPhone] = useState("");
   const [error, setError] = useState("");
 
   function handlePasswordChange(event) {
@@ -59,29 +62,12 @@ function PropertyDetails() {
               //       .catch((error) => console.log(error));
               //   }}
               >
-                <div className="input-group form-group">
+                <div className="input-group form-group ">
                   <div className="input-group-prepend">
                     <span className="input-group-text text-white">
                       <FontAwesomeIcon
                         className="fa-beat-fade"
-                        icon={faUser}
-                        style={{ fontSize: "1.75em", color: "black" }}
-                      ></FontAwesomeIcon>
-                    </span>
-                  </div>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Username"
-                    value={username}
-                  />
-                </div>
-                <div className="input-group form-group mt-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
-                      <FontAwesomeIcon
-                        className="fa-beat-fade"
-                        icon={faMailBulk}
+                        icon={faMapMarker}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                     </span>
@@ -89,17 +75,16 @@ function PropertyDetails() {
                   <input
                     type="email"
                     className="form-control"
-                    placeholder="email"
+                    placeholder="Enter your address"
                     value={email}
                   />
                 </div>
-
                 <div className="input-group form-group mt-3">
                   <div className="input-group-prepend">
                     <span className="input-group-text text-white">
                       <FontAwesomeIcon
                         className="fa-beat-fade"
-                        icon={faKey}
+                        icon={faAreaChart}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                     </span>
@@ -107,19 +92,18 @@ function PropertyDetails() {
                   <input
                     type="password"
                     className="form-control"
-                    placeholder="set password"
+                    placeholder="Enter Area in square Yards"
                     required
                     value={password}
                     // onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-
                 <div className="input-group form-group mt-3">
                   <div className="input-group-prepend">
                     <span className="input-group-text text-white">
                       <FontAwesomeIcon
                         className="fa-beat-fade"
-                        icon={faKey}
+                        icon={faInr}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                     </span>
@@ -127,19 +111,35 @@ function PropertyDetails() {
                   <input
                     type="password"
                     className="form-control"
-                    placeholder="confirm password"
+                    placeholder="Property Price"
                     required
+                    value={password}
+                    // onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                {password !== ConfirmPassword && (
-                  <div>Password and Confirm Password must match!</div>
-                )}
                 <div className="input-group form-group mt-3">
                   <div className="input-group-prepend">
                     <span className="input-group-text text-white">
                       <FontAwesomeIcon
                         className="fa-beat-fade"
-                        icon={faPhone}
+                        icon={faInr}
+                        style={{ fontSize: "1.75em", color: "black" }}
+                      ></FontAwesomeIcon>
+                    </span>
+                  </div>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Enter Down Payment"
+                    required
+                  />
+                </div>
+                <div className="input-group form-group mt-3">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text text-white">
+                      <FontAwesomeIcon
+                        className="fa-beat-fade"
+                        icon={faInr}
                         style={{ fontSize: "1.75em", color: "black" }}
                       />
                     </span>
@@ -150,23 +150,58 @@ function PropertyDetails() {
                     pattern="[0-9]{10}"
                     required
                     className="form-control"
-                    placeholder="Enter Mobile Number"
+                    placeholder="Enter Loan Amount"
                     value={phone}
                   />
+                </div>
+                {/* <div className="input-group form-group mt-3">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text text-white">
+                      <FontAwesomeIcon
+                        className="fa-beat-fade"
+                        icon={faQuestion}
+                        style={{ fontSize: "1.75em", color: "black" }}
+                      ></FontAwesomeIcon>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Purpose Of Loan"
+                    value={username}
+                  />
+                </div> */}
+                <div className="input-group form-group mt-3">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text text-white">
+                      <FontAwesomeIcon
+                        className="fa-beat-fade"
+                        icon={faQuestion}
+                        style={{ fontSize: "1.75em", color: "black" }}
+                      ></FontAwesomeIcon>
+                    </span>
+                  </div>{" "}
+                  <select
+                    name="Purpose of Loan"
+                    id="Purpose Of Loan"
+                    style={{ width: "347px ", borderRadius: "7px" }}
+                  >
+                    <option value="Purpose Of Loan" disabled selected>
+                      Purpose Of Loan {""}
+                    </option>
+                    <option value="UnderConstruction">UnderConstruction</option>
+                    <option value="Ready To Move">Ready To Move</option>
+                    <option value="Home Renovation">Home Renovation</option>
+                  </select>{" "}
                 </div>
                 <div className="form-group">
                   <input
                     type="submit"
                     value="Submit"
-                    className="btn float-right  btn-dark mt-1"
+                    className="btn float-right  btn-dark mt-2"
                   />
                 </div>
               </form>
-            </div>
-            <div className="card-footer">
-              <div className="d-flex justify-content-center links text-light">
-                Already have an account?<Link to="/login">Login</Link>
-              </div>
             </div>
           </div>
         </div>
@@ -176,3 +211,31 @@ function PropertyDetails() {
 }
 
 export default PropertyDetails;
+{
+  /* <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true"
+                    >
+                      Purpose Of Loan
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">
+                        Ready to move
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Under Construction
+                      </a>
+                      <a class="dropdown-item" href="#">
+                       Home Renovation
+                      </a>
+                    </div>
+                  </div> */
+}
