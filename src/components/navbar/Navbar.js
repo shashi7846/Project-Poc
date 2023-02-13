@@ -1,11 +1,13 @@
+import { Button } from "@material-ui/core";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "../../App.css";
 
 const Navbar = () => {
   let Navigate = useNavigate();
-  function handleClick() {
-    Navigate("/login");
-  }
+  // function handleClick() {
+  //   Navigate("/login");
+  // }
 
   const handleLogInOut = () => {
     const userId = localStorage.getItem("id");
@@ -47,13 +49,29 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <div className="navbar-nav ms-auto">
+            <Link class="nav-item nav-link text-light" to="/">
+              {localStorage.getItem("id") ? "" : "Home"}
+            </Link>
+            <Link class="nav-item nav-link text-light" to="/howtoapply">
+              {localStorage.getItem("id") ? "" : "How to Apply"}
+            </Link>
+            <Link class="nav-item nav-link text-light" to="/about">
+              {localStorage.getItem("id") ? "" : "About"}
+            </Link>
             <Link class="nav-item nav-link text-light" to="/register">
-              <i className="bi bi-box-arrow-in-right"></i>
               {localStorage.getItem("id") ? "" : "Register"}
             </Link>
-            <p class="nav-item nav-link text-light" onClick={handleLogInOut}>
-              {localStorage.getItem("id") ? "logout" : "Login"}
-            </p>
+
+            <Button
+              class=" button-nav nav-item nav-link text-light"
+              onClick={handleLogInOut}
+            >
+              {localStorage.getItem("id") ? "Logout" : "Login"}
+            </Button>
+
+            <Link class="nav-item nav-link text-light" to="/contactus">
+              {localStorage.getItem("id") ? "Contact-Us" : ""}
+            </Link>
             {/* <Link
               class="nav-item nav-link text-light"
               to="/login"

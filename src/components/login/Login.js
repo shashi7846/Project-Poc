@@ -15,7 +15,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-5 h-100">
         <div className="d-flex justify-content-center h-100">
           <div className="card bg-dark col-4">
             <div className="card-header ">
@@ -122,12 +122,15 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
+
                 <div className="form-group">
-                  <input
+                  <button
                     type="submit"
                     value="Login"
                     className="btn float-right  btn-dark mt-1"
-                  />
+                  >
+                    Login
+                  </button>
                   {/* <Link to="/Propertydetails" /> */}
                 </div>
               </form>
