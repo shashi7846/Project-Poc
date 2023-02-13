@@ -1,10 +1,25 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  let Navigate = useNavigate();
   function handleClick() {
     Navigate("/login");
   }
+
+  const handleLogInOut = () => {
+    const userId = localStorage.getItem("id");
+    if (userId) {
+      localStorage.removeItem("id");
+      Navigate("/");
+    } else {
+      Navigate("/login");
+    }
+  };
+
+  let user = JSON.parse(window.localStorage.getItem("user-info"));
+  console.log(user);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-dark  ">
@@ -33,21 +48,19 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <div className="navbar-nav ms-auto">
             <Link class="nav-item nav-link text-light" to="/register">
-              <i className="bi bi-box-arrow-in-right"></i>Register
+              <i className="bi bi-box-arrow-in-right"></i>
+              {localStorage.getItem("id") ? "" : "Register"}
             </Link>
-            <Link class="nav-item nav-link text-light" to="/login">
-              <i className="bi bi-box-arrow-in-right"></i> Login
-            </Link>
-            <Link
+            <p class="nav-item nav-link text-light" onClick={handleLogInOut}>
+              {localStorage.getItem("id") ? "logout" : "Login"}
+            </p>
+            {/* <Link
               class="nav-item nav-link text-light"
               to="/login"
-              onClick={() => {
-                window.localStorage.removeItem("app_token"); //removing the jwt token for logging out
-                Navigate(`/login`);
-              }}
+              onClick={handleLogInOut}
             >
-              Logout
-            </Link>
+              {localStorage.getItem("id") ? "Logout" : "Log in"}
+            </Link> */}
           </div>
         </div>
       </nav>

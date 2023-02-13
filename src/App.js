@@ -15,13 +15,26 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/emicheck" element={<Emicheck />} />
-          <Route path="/Propertydetails" element={<PropertyDetails />} />
+          <Route
+            path="/login"
+            element={<ProtectedRoute component={<Home />} />}
+          />
+          <Route
+            path="/emicheck"
+            element={<ProtectedRoute component={<Emicheck />} />}
+          />
+          <Route
+            path="/Propertydetails"
+            element={<ProtectedRoute component={<PropertyDetails />} />}
+          />
         </Routes>
       </div>
     </>
   );
 }
 
+const ProtectedRoute = ({ component }) => {
+  return localStorage.getItem("id") ? component : <Login />;
+};
+console.log(ProtectedRoute);
 export default App;
