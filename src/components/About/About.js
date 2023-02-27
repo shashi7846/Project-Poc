@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
-    <div class="card bg-dark mt-5">
-      <h3 class="card-header text-light">About Us</h3>
-      <div class="card-body" style={{ backgroundColor: "#b30000" }}>
-        <h5 class="card-text text-light">
+    <div className="card bg-dark mt-5">
+      <h3 className="card-header text-light">About Us</h3>
+      <div className="card-body" style={{ backgroundColor: "#b30000" }}>
+        <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
             icon={faCheckCircle}
@@ -16,7 +16,7 @@ const About = () => {
           homeownership by providing personalized, expert support and a wide
           range of loan options.
         </h5>
-        <h5 class="card-text text-light">
+        <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
             icon={faCheckCircle}
@@ -27,7 +27,7 @@ const About = () => {
           a team of experienced professionals who are dedicated to making the
           loan process as easy and stress-free as possible.
         </h5>
-        <h5 class="card-text text-light">
+        <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
             icon={faCheckCircle}
@@ -38,7 +38,7 @@ const About = () => {
           mortgages, to government-backed loans and jumbo loans, we'll help you
           find the best loan option for your specific financial situation.
         </h5>
-        <h5 class="card-text text-light">
+        <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
             icon={faCheckCircle}
@@ -50,7 +50,7 @@ const About = () => {
           financial situation, and we'll let you know how much you can afford to
           borrow.
         </h5>
-        <h5 class="card-text text-light">
+        <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
             icon={faCheckCircle}

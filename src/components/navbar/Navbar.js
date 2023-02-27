@@ -1,4 +1,3 @@
-import { Button } from "@material-ui/core";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../App.css";
@@ -19,12 +18,68 @@ const Navbar = () => {
     }
   };
 
-  let user = JSON.parse(window.localStorage.getItem("user-info"));
-  console.log(user);
-
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark  ">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <div class="container-fluid">
+          <Link className="navbar-brand text-light" to="/">
+            <img
+              src="favicon.ico"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt=""
+            />
+            -Loan
+          </Link>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto text-center">
+              <li class="nav-item">
+                <Link className="nav-item nav-link text-light" to="/">
+                  {localStorage.getItem("id") ? "" : "Home"}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-item nav-link text-light" to="/howtoapply">
+                  {localStorage.getItem("id") ? "" : "How to Apply"}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-item nav-link text-light" to="/about">
+                  {localStorage.getItem("id") ? "" : "About"}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-item nav-link text-light" to="/register">
+                  {localStorage.getItem("id") ? "" : "Register"}
+                </Link>
+              </li>
+
+              <li class="nav-item">
+                <Link
+                  className="nav-item nav-link text-light"
+                  onClick={handleLogInOut}
+                  to="/login"
+                >
+                  {localStorage.getItem("id") ? "Logout" : "Login"}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
         <Link className="navbar-brand text-light" to="/">
           <img
             src="favicon.ico"
@@ -49,39 +104,32 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <div className="navbar-nav ms-auto">
-            <Link class="nav-item nav-link text-light" to="/">
+            <Link className="nav-item nav-link text-light" to="/">
               {localStorage.getItem("id") ? "" : "Home"}
             </Link>
-            <Link class="nav-item nav-link text-light" to="/howtoapply">
+            <Link className="nav-item nav-link text-light" to="/howtoapply">
               {localStorage.getItem("id") ? "" : "How to Apply"}
             </Link>
-            <Link class="nav-item nav-link text-light" to="/about">
+            <Link className="nav-item nav-link text-light" to="/about">
               {localStorage.getItem("id") ? "" : "About"}
             </Link>
-            <Link class="nav-item nav-link text-light" to="/register">
+            <Link className="nav-item nav-link text-light" to="/register">
               {localStorage.getItem("id") ? "" : "Register"}
             </Link>
 
-            <Button
-              class=" button-nav nav-item nav-link text-light"
-              onClick={handleLogInOut}
-            >
-              {localStorage.getItem("id") ? "Logout" : "Login"}
-            </Button>
-
-            <Link class="nav-item nav-link text-light" to="/contactus">
+            <Link className="nav-item nav-link text-light" to="/contactus">
               {localStorage.getItem("id") ? "Contact-Us" : ""}
             </Link>
-            {/* <Link
-              class="nav-item nav-link text-light"
-              to="/login"
+            <Link
+              className="nav-item nav-link text-light"
               onClick={handleLogInOut}
+              to="/login"
             >
-              {localStorage.getItem("id") ? "Logout" : "Log in"}
-            </Link> */}
+              {localStorage.getItem("id") ? "Logout" : "Login"}
+            </Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </div>
   );
 };

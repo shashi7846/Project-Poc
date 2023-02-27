@@ -34,3 +34,12 @@ export function GetuserbyEmailAndPassword(data) {
     `http://localhost:4000/users?email=${data.email}&password=${data.password}`
   );
 }
+
+export function PostPropertyDetailsByEmail(data) {
+  // posting property details with particular id
+  return axios.post(`http://localhost:4000/users?email=${data.email}`);
+}
+export function PostPropertyDetails(id, data) {
+  // posting property details with particular id
+  return axios.patch(`http://localhost:4000/users/${id}`, data);
+}

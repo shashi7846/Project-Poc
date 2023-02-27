@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { GetuserbyEmail, Postregister } from "../../Api/Api";
+import { validateRegisterFOrm } from "../helpers";
 const Register = () => {
   let [Male, SetMale] = useState("");
   let [Female, SetFemale] = useState("");
@@ -76,14 +77,14 @@ const Register = () => {
                     .catch((error) => console.log(error));
                 }}
               >
-                <div class="form-check form-check-inline mt-3 text-light">
+                <div className="form-check form-check-inline mt-3 text-light">
                   <h4>
                     <b>Gender</b>
                   </h4>
                 </div>
-                <div class="form-check form-check-inline">
+                <div className="form-check form-check-inline">
                   <input
-                    class="form-check-input"
+                    className="form-check-input"
                     type="radio"
                     name="inlineRadioOptions"
                     id="inlineRadio1"
@@ -93,15 +94,15 @@ const Register = () => {
                     }}
                   />
                   <label
-                    class="form-check-label text-light bg-dark"
+                    className="form-check-label text-light bg-dark"
                     for="inlineRadio1"
                   >
                     Male
                   </label>
                 </div>
-                <div class="form-check form-check-inline text-light">
+                <div className="form-check form-check-inline text-light">
                   <input
-                    class="form-check-input  "
+                    className="form-check-input  "
                     type="radio"
                     name="inlineRadioOptions"
                     id="inlineRadio2"
@@ -110,7 +111,10 @@ const Register = () => {
                       SetFemale(e.target.value);
                     }}
                   />
-                  <label class="form-check-label bg-dark" for="inlineRadio2">
+                  <label
+                    className="form-check-label bg-dark"
+                    for="inlineRadio2"
+                  >
                     Female
                   </label>
                 </div>

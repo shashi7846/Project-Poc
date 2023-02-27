@@ -9,12 +9,16 @@ import PropertyDetails from "./components/PropertyDetails/PropertyDetails";
 import Howtoapply from "./components/Howtoapply/Howtoapply";
 import Contactus from "./components/ContactUs/Contactus";
 import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container min-vh-100 my-5 py-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -38,6 +42,8 @@ function App() {
           />
         </Routes>
       </div>
+      <Footer />
+      <ToastContainer />
     </>
   );
 }
@@ -45,5 +51,5 @@ function App() {
 const ProtectedRoute = ({ component }) => {
   return localStorage.getItem("id") ? component : <Login />;
 };
-console.log(ProtectedRoute);
+
 export default App;
