@@ -10,6 +10,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { GetuserbyEmail, Postregister } from "../../Api/Api";
 import { validateRegisterFOrm } from "../helpers";
+import { registrationAction } from "../../redux/actions/auth";
+import { useDispatch } from "react-redux";
 const Register = () => {
   let [Male, SetMale] = useState("");
   let [Female, SetFemale] = useState("");
@@ -33,6 +35,8 @@ const Register = () => {
 
   let Navigate = useNavigate();
 
+  let dispatch = useDispatch();
+
   function handlePasswordChange(event) {
     setPassword(event.target.value);
   }
@@ -54,27 +58,43 @@ const Register = () => {
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
-                  let getApiData = GetuserbyEmail(email)
-                    .then((getApiData) => {
-                      setError((previousState) => {
-                        if (getApiData.data.length !== 0)
-                          return "An user already exists with this email.";
-                        else return "";
-                      });
-                      getApiData.data.length !== 0 &&
-                        console.log("error: ", error);
-                      if (getApiData.data.length === 0) {
-                        Postregister(userData).then((data) => {
-                          setEmail("");
-                          setPassword("");
-                          setConfirmPassword("");
-                          setPhone("");
-                          setUsername("");
-                          Navigate("/login");
-                        });
-                      }
-                    })
-                    .catch((error) => console.log(error));
+                  dispatch(registrationAction(userData, Navigate));
+
+                  // let getApiData = GetuserbyEmail(email)
+                  //   .then((getApiData) => {
+                  //     setError((previousState) => {
+                  //       if (getApiData.data.length !== 0)
+                  //         return "An user already exists with this email.";
+                  //       else return "";
+                  //     });
+                  //     getApiData.data.length !== 0 &&
+                  //       console.log("error: ", error);
+                  //     if (getApiData.data.length === 0) {
+                  //       Postregister(userData).then((data) => {
+                  //         setEmail("");
+                  //         setPassword("");
+                  //         setConfirmPassword("");
+                  //         setPhone("");
+                  //         setUsername("");
+                  //         Navigate("/login");
+                  //       });
+                  //     }
+                  //   })
+                  //   .catch((error) => console.log(error));
+                  // e.preventDefault();
+                  // let reg = await Postregister(userData);
+                  // if (reg.data.message === "email already exist") {
+                  //   alert("Email already in use");
+                  // } else {
+                  //   alert("successfully registered");
+                  // }
+                  // setEmail("");
+                  // setPassword("");
+                  // setConfirmPassword("");
+                  // setPhone("");
+                  // setUsername("");
+                  // Navigate("/login");
+                  // Navigate(`/login`);
                 }}
               >
                 <div className="form-check form-check-inline mt-3 text-light">
@@ -82,7 +102,7 @@ const Register = () => {
                     <b>Gender</b>
                   </h4>
                 </div>
-                <div className="form-check form-check-inline">
+                <div className="Registergender form-check form-check-inline">
                   <input
                     className="form-check-input"
                     type="radio"
@@ -94,13 +114,13 @@ const Register = () => {
                     }}
                   />
                   <label
-                    className="form-check-label text-light bg-dark"
+                    className="form-check-label text-light "
                     for="inlineRadio1"
                   >
                     Male
                   </label>
                 </div>
-                <div className="form-check form-check-inline text-light">
+                <div className=" Registergender form-check form-check-inline text-light">
                   <input
                     className="form-check-input  "
                     type="radio"
@@ -111,10 +131,7 @@ const Register = () => {
                       SetFemale(e.target.value);
                     }}
                   />
-                  <label
-                    className="form-check-label bg-dark"
-                    for="inlineRadio2"
-                  >
+                  <label className="form-check-label " for="inlineRadio2">
                     Female
                   </label>
                 </div>
@@ -223,7 +240,9 @@ const Register = () => {
                   />
                 </div>
                 {password !== ConfirmPassword && (
-                  <div>Password and Confirm Password must match!</div>
+                  <div className="Registercaption">
+                    Password and Confirm Password must match!
+                  </div>
                 )}
                 <div className="input-group form-group mt-3">
                   <div className="input-group-prepend">

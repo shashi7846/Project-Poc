@@ -8,7 +8,7 @@ export default function Footer() {
           className="text-center p-3 py-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          &#169; 2022 Copyright: <span className="text-info">M-Loan</span>
+          &#169; 2022 Copyright: <span className="text-danger">M-Loan</span>
         </div>
       </footer>
     </>

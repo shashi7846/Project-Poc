@@ -16,7 +16,9 @@ const Contactus = () => {
       <div className="d-flex justify-content-center h-100">
         <div className="card bg-dark col-4">
           <div className="card-header ">
-            <h3 className="login-name text-light">Contact-Us</h3>
+            <h3 className="login-name text-light">
+              <b>Contact-Us</b>
+            </h3>
           </div>
           <div className="card-body" style={{ backgroundColor: "#b30000" }}>
             <form
@@ -80,14 +82,13 @@ const Contactus = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group mt-2">
                 <input
                   type="submit"
                   value="Submit"
                   className="btn float-right  btn-dark mt-1"
                   onClick={() => setShowdata(!Showdata)}
                 />
-                {/* <Link to="/Propertydetails" /> */}
               </div>
               {Showdata ? (
                 <h5 className="text-light">
@@ -96,11 +97,6 @@ const Contactus = () => {
               ) : (
                 ""
               )}
-              {/* {Showdata && (
-                <h5 className="text-light">
-                  Your Request Successfully Submitted
-                </h5>
-              )} */}
             </form>
           </div>
         </div>

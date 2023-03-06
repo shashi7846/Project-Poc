@@ -1,9 +1,9 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/login/Login";
-import Home from "./components/home/Home";
-import Register from "./components/register/Register";
-import Navbar from "./components/navbar/Navbar";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
+import Register from "./components/Register/Register";
+import Navbar from "./components/Navbar/Navbar";
 import Emicheck from "./components/emi-check/Emicheck";
 import PropertyDetails from "./components/PropertyDetails/PropertyDetails";
 import Howtoapply from "./components/Howtoapply/Howtoapply";
@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import Confirmpage from "./components/ConfirmPage/Confirmpage";
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/howtoapply" element={<Howtoapply />} />
           <Route path="register" element={<Register />} />
+          <Route
+            path="confirmpage"
+            element={<ProtectedRoute component={<Confirmpage />} />}
+          />
+
           <Route
             path="/login"
             element={<ProtectedRoute component={<Home />} />}
@@ -37,7 +43,7 @@ function App() {
             element={<ProtectedRoute component={<Emicheck />} />}
           />
           <Route
-            path="/Propertydetails"
+            path="/propertydetails"
             element={<ProtectedRoute component={<PropertyDetails />} />}
           />
         </Routes>

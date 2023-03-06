@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,13 +7,14 @@ import {
   faPercent,
   faInr,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { emiCalculator } from "../helpers";
+import { PuffLoader } from "react-spinners";
 
 const defaultData = {
-  loanAmount: "800000",
-  netIncome: "30000",
-  tenure: "72",
+  loanAmount: "",
+  netIncome: "",
+  tenure: "",
   interest: "9.5",
 };
 
@@ -27,7 +28,15 @@ function Emicheck() {
     maxEmi: 0,
   });
 
-  let navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  // let navigate = useNavigate();
   const handleChange = (e) =>
     setEmiCheck({ ...emicheck, [e.target.name]: e.target.value });
   const handleClose = () => setShow(false);
@@ -45,119 +54,131 @@ function Emicheck() {
 
   return (
     <>
-      <div className="container mt-5">
-        <div className="d-flex justify-content-center h-100">
-          <div className="card bg-dark col-4">
-            <div className="card-header ">
-              <h3 className="login-name text-light">Check Emi</h3>
-            </div>
-            <div className="card-body" style={{ backgroundColor: "#b30000" }}>
-              <form onSubmit={handleOnSubmit}>
-                <div className="input-group form-group">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
-                      <FontAwesomeIcon
-                        className="fa-beat-fade"
-                        icon={faInr}
-                        style={{ fontSize: "1.75em", color: "black" }}
-                      ></FontAwesomeIcon>
-                    </span>
+      {loading ? (
+        <PuffLoader
+          className="Loader"
+          color={"#e60909"}
+          loading={loading}
+          size={100}
+        />
+      ) : (
+        <div className="container mt-5">
+          <div className="d-flex justify-content-center h-100">
+            <div className="card bg-dark col-4">
+              <div className="card-header ">
+                <h3 className="login-name text-light">
+                  <b>Check Emi</b>
+                </h3>
+              </div>
+              <div className="card-body" style={{ backgroundColor: "#b30000" }}>
+                <form onSubmit={handleOnSubmit}>
+                  <div className="input-group form-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text text-white">
+                        <FontAwesomeIcon
+                          className="fa-beat-fade"
+                          icon={faInr}
+                          style={{ fontSize: "1.75em", color: "black" }}
+                        ></FontAwesomeIcon>
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="loanAmount"
+                      value={emicheck.loanAmount}
+                      onChange={handleChange}
+                      placeholder="Enter Loan Amount"
+                    />
                   </div>
-                  <input
-                    type="number"
-                    className="form-control"
-                    name="loanAmount"
-                    value={emicheck.loanAmount}
-                    onChange={handleChange}
-                    placeholder="Enter Loan Amount"
-                  />
-                </div>
-                <div className="input-group form-group mt-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
-                      <FontAwesomeIcon
-                        className="fa-beat-fade"
-                        icon={faInr}
-                        style={{ fontSize: "1.75em", color: "black" }}
-                      ></FontAwesomeIcon>
-                    </span>
-                  </div>
-                  <input
-                    type="number"
-                    className="form-control"
-                    name="netIncome"
-                    value={emicheck.netIncome}
-                    onChange={handleChange}
-                    placeholder="Net Income Per Month"
-                  />
-                </div>
-
-                <div className="input-group form-group mt-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
-                      <FontAwesomeIcon
-                        className="fa-beat-fade"
-                        icon={faCalendar}
-                        style={{ fontSize: "1.75em", color: "black" }}
-                      ></FontAwesomeIcon>
-                    </span>
-                  </div>
-                  <input
-                    type="number"
-                    className="form-control"
-                    name="tenure"
-                    value={emicheck.tenure}
-                    onChange={handleChange}
-                    placeholder=" Select Loan Tenure"
-                  />
-                </div>
-
-                <div className="input-group form-group mt-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
-                      <FontAwesomeIcon
-                        className="fa-beat-fade"
-                        icon={faPercent}
-                        style={{ fontSize: "1.75em", color: "black" }}
-                      />
-                    </span>
+                  <div className="input-group form-group mt-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text text-white">
+                        <FontAwesomeIcon
+                          className="fa-beat-fade"
+                          icon={faInr}
+                          style={{ fontSize: "1.75em", color: "black" }}
+                        ></FontAwesomeIcon>
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="netIncome"
+                      value={emicheck.netIncome}
+                      onChange={handleChange}
+                      placeholder="Net Income Per Month"
+                    />
                   </div>
 
-                  <input
-                    type="number"
-                    className="form-control"
-                    value={emicheck.interest}
-                    placeholder="Rate Of Interest"
-                    disabled
-                  />
-                </div>
-                <div className="form-group">
-                  <Link
-                    type="submit"
-                    to="/Propertydetails"
-                    className="btn float-right  btn-dark mt-2 "
-                  >
-                    Back
-                  </Link>
-                  <Link
-                    type="submit"
-                    to="/"
-                    className="btn float-right  btn-dark mt-2 "
-                  >
-                    Close
-                  </Link>
-                  <button
-                    type="submit"
-                    className="btn float-right  btn-dark mt-2"
-                  >
-                    Check Eligibility
-                  </button>
-                </div>
-              </form>
+                  <div className="input-group form-group mt-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text text-white">
+                        <FontAwesomeIcon
+                          className="fa-beat-fade"
+                          icon={faCalendar}
+                          style={{ fontSize: "1.75em", color: "black" }}
+                        ></FontAwesomeIcon>
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="tenure"
+                      value={emicheck.tenure}
+                      onChange={handleChange}
+                      placeholder=" Select Loan Tenure"
+                    />
+                  </div>
+
+                  <div className="input-group form-group mt-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text text-white">
+                        <FontAwesomeIcon
+                          className="fa-beat-fade"
+                          icon={faPercent}
+                          style={{ fontSize: "1.75em", color: "black" }}
+                        />
+                      </span>
+                    </div>
+
+                    <input
+                      type="number"
+                      className="form-control"
+                      value={emicheck.interest}
+                      placeholder="Rate Of Interest"
+                      disabled
+                    />
+                  </div>
+                  <div className="form-group">
+                    <Link
+                      type="submit"
+                      to="/Propertydetails"
+                      className="btn float-right  btn-dark mt-2 "
+                    >
+                      <b>Back</b>
+                    </Link>
+                    <Link
+                      type="submit"
+                      to="/"
+                      className="btn float-right  btn-dark mt-2 "
+                    >
+                      Close
+                    </Link>
+                    <button
+                      type="submit"
+                      className="btn float-right  btn-dark mt-2"
+                    >
+                      Check Eligibility
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>You are Eligible</Modal.Title>
@@ -173,7 +194,10 @@ function Emicheck() {
             Close
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            <Link to="/confirmpage" style={{ color: "white" }}>
+              {" "}
+              Proceed
+            </Link>
           </Button>
         </Modal.Footer>
       </Modal>

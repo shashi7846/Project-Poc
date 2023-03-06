@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
           <Link className="navbar-brand text-light" to="/">
             <img
@@ -30,7 +30,7 @@ const Navbar = () => {
               className="d-inline-block align-top"
               alt=""
             />
-            -Loan
+            <b>-Loan</b>
           </Link>
           <button
             class="navbar-toggler"
@@ -47,24 +47,59 @@ const Navbar = () => {
             <ul class="navbar-nav ms-auto text-center">
               <li class="nav-item">
                 <Link className="nav-item nav-link text-light" to="/">
-                  {localStorage.getItem("id") ? "" : "Home"}
+                  Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-item nav-link text-light" to="/howtoapply">
-                  {localStorage.getItem("id") ? "" : "How to Apply"}
+                  How to Apply
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-item nav-link text-light" to="/about">
-                  {localStorage.getItem("id") ? "" : "About"}
+                  About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-item nav-link text-light" to="/register">
-                  {localStorage.getItem("id") ? "" : "Register"}
-                </Link>
-              </li>
+
+              {localStorage.getItem("id") ? (
+                <>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-item nav-link text-light"
+                      to="/propertydetails"
+                    >
+                      Property Details
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-item nav-link text-light"
+                      to="/emicheck"
+                    >
+                      Emi-Check
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-item nav-link text-light"
+                      to="/contactus"
+                    >
+                      Contact-Us
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-item nav-link text-light"
+                      to="/register"
+                    >
+                      Register
+                    </Link>
+                  </li>
+                </>
+              )}
 
               <li class="nav-item">
                 <Link

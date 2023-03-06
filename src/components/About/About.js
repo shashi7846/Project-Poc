@@ -4,8 +4,10 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <div className="card bg-dark mt-5">
-      <h3 className="card-header text-light">About Us</h3>
-      <div className="card-body" style={{ backgroundColor: "#b30000" }}>
+      <h3 className="card-header text-light Cardtop">
+        <b>About Us</b>
+      </h3>
+      <div className="card-body" style={{ backgroundColor: "rgb(125,13,16)" }}>
         <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"
@@ -21,11 +23,11 @@ const About = () => {
             className="fa-beat-fade"
             icon={faCheckCircle}
           ></FontAwesomeIcon>{" "}
-          Why Choose Us: At [Your Company Name], we understand that choosing a
-          mortgage lender can be a confusing and overwhelming experience. That's
-          why we offer competitive rates, a streamlined application process, and
-          a team of experienced professionals who are dedicated to making the
-          loan process as easy and stress-free as possible.
+          Why Choose Us: At M-Loan, we understand that choosing a mortgage
+          lender can be a confusing and overwhelming experience. That's why we
+          offer competitive rates, a streamlined application process, and a team
+          of experienced professionals who are dedicated to making the loan
+          process as easy and stress-free as possible.
         </h5>
         <h5 className="card-text text-light">
           <FontAwesomeIcon
@@ -56,9 +58,9 @@ const About = () => {
             icon={faCheckCircle}
           ></FontAwesomeIcon>{" "}
           Start Your Journey: Take the first step towards homeownership and
-          start your journey with [Your Company Name]. Apply for a mortgage loan
-          today and experience the difference that comes from working with a
-          trusted and experienced lender.
+          start your journey with M-Loan. Apply for a mortgage loan today and
+          experience the difference that comes from working with a trusted and
+          experienced lender.
         </h5>
       </div>
     </div>

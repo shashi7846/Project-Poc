@@ -4,8 +4,10 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 const Howtoapply = () => {
   return (
     <div className="card bg-dark mt-5">
-      <h3 className="card-header text-light">How To Apply</h3>
-      <div className="card-body" style={{ backgroundColor: "#b30000" }}>
+      <h3 className="card-header text-light Cardtop">
+        <b>How To Apply</b>
+      </h3>
+      <div className="card-body" style={{ backgroundColor: "rgb(125,13,16)" }}>
         <h5 className="card-text text-light">
           <FontAwesomeIcon
             className="fa-beat-fade"

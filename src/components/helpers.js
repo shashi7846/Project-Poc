@@ -22,6 +22,17 @@ export const validatePropertyDetailsForm = (input) => {
   return errors;
 };
 
+export const ValidateLoginForm = (input) => {
+  const errors = [];
+  if (!input.email) {
+    errors.push("Email is Required");
+  }
+  if (!input.password) {
+    errors.push("Please enter Password");
+  }
+  return errors;
+};
+
 export const validateRegisterForm = (input) => {
   const errors = [];
   if (!input.gender) {
