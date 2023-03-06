@@ -19,10 +19,10 @@ import axios from "axios";
 // }
 
 export function Postlogin(data) {
-  return axios.post("http://localhost:4000/users", data);
+  return axios.post("http://localhost:4000/login", data);
 }
 export function Postregister(data) {
-  return axios.post("http://localhost:4000/users", data);
+  return axios.post("http://localhost:8000/register", data);
 }
 
 export function GetuserbyEmail(data) {
