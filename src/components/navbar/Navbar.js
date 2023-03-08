@@ -20,8 +20,8 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        <div className="container-fluid">
           <Link className="navbar-brand text-light" to="/">
             <img
               src="favicon.ico"
@@ -33,7 +33,7 @@ const Navbar = () => {
             <b>-Loan</b>
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
@@ -41,11 +41,11 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto text-center">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav ms-auto text-center">
+              <li className="nav-item">
                 <Link className="nav-item nav-link text-light" to="/">
                   Home
                 </Link>
@@ -56,8 +56,18 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-item nav-link text-light" to="/services">
+                  Services
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-item nav-link text-light" to="/about">
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-item nav-link text-light" to="/faqs">
+                  FAQS
                 </Link>
               </li>
 
@@ -101,7 +111,7 @@ const Navbar = () => {
                 </>
               )}
 
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   className="nav-item nav-link text-light"
                   onClick={handleLogInOut}

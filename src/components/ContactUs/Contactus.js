@@ -14,7 +14,7 @@ const Contactus = () => {
   return (
     <div className="container mt-5 h-100">
       <div className="d-flex justify-content-center h-100">
-        <div className="card bg-dark col-4">
+        <div className="card bg-dark col-5">
           <div className="card-header ">
             <h3 className="login-name text-light">
               <b>Contact-Us</b>

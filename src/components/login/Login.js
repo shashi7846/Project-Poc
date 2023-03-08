@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 //import { faMailBulk } from "@react-icons/all-files/fa/faMailBulk";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey, faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import { GetuserbyEmailAndPassword, Postlogin } from "../../Api/Api";
+import { GetuserbyEmailAndPassword, Postlogin } from "../../api/Api";
 
 import { ValidateLoginForm } from "../helpers";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 
 const LoginData = {
   email: "",
@@ -18,7 +19,10 @@ function Login() {
 
   const handleChange = (e) =>
     setLogindetails({ ...Logindetails, [e.target.name]: e.target.value });
-  let navigate = useNavigate();
+
+  let Navigate = useNavigate();
+
+  let dispatch = useDispatch();
 
   const HandleOnSubmit = async (e) => {
     try {
@@ -32,7 +36,7 @@ function Login() {
         localStorage.setItem("id", userData[0].id);
         console.log(userData);
         setLogindetails(LoginData);
-        navigate("/propertydetails");
+        Navigate("/propertydetails");
       }
     } catch (error) {
       toast.error(error.message, {
@@ -46,7 +50,7 @@ function Login() {
     <>
       <div className="container mt-5 h-100">
         <div className="d-flex justify-content-center h-100">
-          <div className="card col-4" style={{ backgroundColor: "black" }}>
+          <div className="card col-5" style={{ backgroundColor: "black" }}>
             <div className="card-header Cardtop ">
               <h3 className="login-name text-light">
                 <b>Login</b>
@@ -63,7 +67,10 @@ function Login() {
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faMailBulk}
-                        style={{ fontSize: "1.75em", color: "black" }}
+                        style={{
+                          fontSize: "1.75em",
+                          color: "black",
+                        }}
                       ></FontAwesomeIcon>
                     </span>
                   </div>

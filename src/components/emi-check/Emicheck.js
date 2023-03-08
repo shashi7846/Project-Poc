@@ -64,7 +64,7 @@ function Emicheck() {
       ) : (
         <div className="container mt-5">
           <div className="d-flex justify-content-center h-100">
-            <div className="card bg-dark col-4">
+            <div className="card bg-dark col-5">
               <div className="card-header ">
                 <h3 className="login-name text-light">
                   <b>Check Emi</b>
@@ -181,11 +181,12 @@ function Emicheck() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>You are Eligible</Modal.Title>
+          <Modal.Title>Loan Eligibility</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <b>₹ {eligibility.loanAmount}</b> at EMI<b> ₹ {eligibility.emi}</b>{" "}
-          You are Eligible for a Maximum loan of{" "}
+          Emi For Entered Amount will be<b>₹ {eligibility.loanAmount}</b> at EMI
+          <b> ₹ {eligibility.emi}</b>
+          <br /> You are Eligible for a Maximum loan of{" "}
           <b>₹ {eligibility.maxLoanAmount} </b>
           at EMI <b>₹ {eligibility.maxEmi}</b>
         </Modal.Body>

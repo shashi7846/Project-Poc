@@ -1,19 +1,21 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/Login/Login";
-import Home from "./components/Home/Home";
-import Register from "./components/Register/Register";
-import Navbar from "./components/Navbar/Navbar";
+import Login from "./components/login/Login";
+import Home from "./components/home/Home";
+import Register from "./components/register/Register";
+import Navbar from "./components/navbar/Navbar";
 import Emicheck from "./components/emi-check/Emicheck";
-import PropertyDetails from "./components/PropertyDetails/PropertyDetails";
-import Howtoapply from "./components/Howtoapply/Howtoapply";
-import Contactus from "./components/ContactUs/Contactus";
-import About from "./components/About/About";
-import Footer from "./components/Footer/Footer";
+import PropertyDetails from "./components/propertydetails/PropertyDetails";
+import Howtoapply from "./components/howtoapply/Howtoapply";
+import Contactus from "./components/contactus/Contactus";
+import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import Confirmpage from "./components/ConfirmPage/Confirmpage";
+import Confirmpage from "./components/confirmpage/Confirmpage";
+import Services from "./components/services/Services";
+import Faqs from "./components/faqs/Faqs";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/howtoapply" element={<Howtoapply />} />
+          <Route path="/services" element={<Services />} />
           <Route path="register" element={<Register />} />
+          <Route path="faqs" element={<Faqs />} />
           <Route
             path="confirmpage"
             element={<ProtectedRoute component={<Confirmpage />} />}

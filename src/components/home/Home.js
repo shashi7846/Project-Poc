@@ -21,23 +21,37 @@ const Home = () => {
       <div>
         <h1>
           <center className="landingpage">
-            <h1 className="h">Welcome to M-Loan Website</h1>
+            <h1 className="h">
+              Welcome to <b>M-Loan</b>
+            </h1>
           </center>
         </h1>
-        <p className="paragraph">
-          Need Loan? then you are right place 😉 check you eligibility and{" "}
+        <p className="paragraph text-light">
+          {/* Need Loan? then you are right place 😉 check you eligibility and{" "}
           <br />
-          apply for the loan.
+          apply for the loan. */}
+          Planning to take a Mortage Loan? Use this Mortage Loan EMI Calculator
+          <br />
+          to estimate the EMI amount payable per month to repay the Mortage
+          <br />
+          Loan. The Mortage Loan EMI Calculator is easy to use. All you need to
+          <br />
+          select is the Loan amount, Loan Tenure . After selecting the Loan
+          <br />
+          Amount, and The Loan Tenure, the calculator will estimate the monthly
+          <br />
+          EMI amount and the total Interest payable till the end of the loan
+          tenure.
         </p>
         {!localStorage.getItem("id") && (
           <>
-            <button class="btn btn-outline-dark home-btn1 " type="submit">
+            <button className="btn btn-outline-dark home-btn1 " type="submit">
               <Link className="nav-item nav-link text-light" to="/register">
                 Register
               </Link>
             </button>
             <button
-              class="btn btn-outline-dark txt-light home-btn2"
+              className="btn btn-outline-dark txt-light home-btn2"
               type="submit"
             >
               <Link
@@ -50,55 +64,6 @@ const Home = () => {
             </button>
           </>
         )}
-      </div>
-      <div class="container Homecards ui-card">
-        <div class="row middle">
-          <div class="col-sm">
-            <div class="card">
-              <img
-                class="card-img-top"
-                src={Howtoapplyimg}
-                alt="Card image cap"
-                height="250px"
-              />
-              <div class="card-body">
-                <Link to="/howtoapply" class="btn btn-primary">
-                  Click Here
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            <div class="card">
-              <img
-                className="card-img-top "
-                src={Aboutimg}
-                alt="Card image cap"
-                height="250px"
-              />
-              <div class="card-body">
-                <Link to="/about" class="btn btn-primary">
-                  Click Here
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            <div class="card">
-              <img
-                className="card-img-top"
-                src={Contactimg}
-                alt="Card image cap"
-                height="250px"
-              />
-              <div class="card-body">
-                <Link to="/contactus" class="btn btn-primary">
-                  Click Here
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

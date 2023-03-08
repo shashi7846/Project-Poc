@@ -1,29 +1,39 @@
 import axios from "axios";
+import { validateRegistrationForm } from "../../components/register/Register";
 
 import { errorToast, successToast } from "../../components/Toast";
-import { authConstants } from "../constants";
+import { constants } from "../constants";
 
-export const registrationAction = (user, navigate) => {
+export const registrationAction = (userData, navigate) => {
   return async (dispatch) => {
     try {
-      dispatch({ type: authConstants.SIGNUP_REQUEST });
-      const res = await axios.post(`http://localhost:8000/register`, {
-        ...user,
-      });
-      if (res.status === 201) {
-        successToast("Registration Successful");
+      dispatch({ type: constants.SIGNUP_REQUEST });
+      const errors = validateRegistrationForm(userData);
+      if (Object.keys(errors).length) throw new Error(Object.values(errors)[0]);
+      const { data } = await axios.post(
+        `http://localhost:8000/register`,
+        userData
+      );
 
-        dispatch({
-          type: authConstants.SIGNUP_SUCCESS,
-        });
+      successToast(data.message);
 
-        navigate("/login");
-      }
-    } catch (err) {
-      errorToast("Registration Failure");
       dispatch({
-        type: authConstants.SIGNUP_FAILURE,
-        payload: { error: "Registration Failure" },
+        type: constants.SIGNUP_SUCCESS,
+      });
+
+      navigate("/login");
+      // const { message } = res;
+      // successToast("success");
+
+      // dispatch({
+      //   type: constants.REGISTRATION_SUCCESS,
+      //   payload: { message: "success" },
+      // });
+    } catch (err) {
+      errorToast(err.response.data.error);
+      dispatch({
+        type: constants.SIGNUP_FAILURE,
+        payload: err.response.data,
       });
     }
   };
@@ -32,7 +42,7 @@ export const registrationAction = (user, navigate) => {
 export const LoginAction = (user, navigate) => {
   return async (dispatch) => {
     try {
-      dispatch({ type: authConstants.SIGNIN_REQUEST });
+      dispatch({ type: constants.SIGNIN_REQUEST });
       const res = await axios.post(`http://localhost:4000/login`, {
         ...user,
       });
@@ -40,7 +50,7 @@ export const LoginAction = (user, navigate) => {
         successToast("Login Successful");
 
         dispatch({
-          type: authConstants.SIGNIN_SUCCESS,
+          type: constants.SIGNIN_SUCCESS,
         });
 
         navigate("/propertydetails");
@@ -48,7 +58,7 @@ export const LoginAction = (user, navigate) => {
     } catch (err) {
       errorToast("Login Failure");
       dispatch({
-        type: authConstants.SIGNIN_FAILURE,
+        type: constants.SIGNIN_FAILURE,
         payload: { error: "Login Failure" },
       });
     }
@@ -58,7 +68,7 @@ export const LoginAction = (user, navigate) => {
 // export const signoutAction = (user, navigate) => {
 //   return async (dispatch) => {
 //     try {
-//       dispatch({ type: authConstants.SIGNOUT_REQUEST });
+//       dispatch({ type: constants.SIGNOUT_REQUEST });
 //       const res = await axios.post(`/auth/signout`, {
 //         ...user,
 //       });
@@ -68,13 +78,13 @@ export const LoginAction = (user, navigate) => {
 //         navigate('/');
 //         Cookies.set('OSNR_Token', undefined);
 //         dispatch({
-//           type: authConstants.SIGNOUT_SUCCESS,
+//           type: constants.SIGNOUT_SUCCESS,
 //           payload: { message },
 //         });
 //       }
 //     } catch (err) {
 //       dispatch({
-//         type: authConstants.SIGNOUT_FAILURE,
+//         type: constants.SIGNOUT_FAILURE,
 //         payload: { error: err.response.data.error },
 //       });
 //     }
@@ -84,7 +94,7 @@ export const LoginAction = (user, navigate) => {
 // export const forgotAction = (user, resetForm, navigate) => {
 //   return async (dispatch) => {
 //     try {
-//       dispatch({ type: authConstants.FORGOT_REQUEST });
+//       dispatch({ type: constants.FORGOT_REQUEST });
 //       const res = await axios.patch(`/auth/forgot`, {
 //         ...user,
 //       });
@@ -92,7 +102,7 @@ export const LoginAction = (user, navigate) => {
 //         const { message } = res.data;
 //         successToast(message);
 //         dispatch({
-//           type: authConstants.FORGOT_SUCCESS,
+//           type: constants.FORGOT_SUCCESS,
 //           payload: { message },
 //         });
 //         resetForm();
@@ -101,7 +111,7 @@ export const LoginAction = (user, navigate) => {
 //     } catch (err) {
 //       if (hasUserError(err)) errorToast(err.response.data.error);
 //       dispatch({
-//         type: authConstants.FORGOT_FAILURE,
+//         type: constants.FORGOT_FAILURE,
 //         payload: { error: err.response.data.error },
 //       });
 //     }
@@ -111,17 +121,17 @@ export const LoginAction = (user, navigate) => {
 // export const verifyTokenAction = () => {
 //   return async (dispatch) => {
 //     try {
-//       dispatch({ type: authConstants.VERIFY_TOKEN_REQUEST });
+//       dispatch({ type: constants.VERIFY_TOKEN_REQUEST });
 //       const authToken = Cookies.get(tokeName);
 //       const user = authToken ? decodeToken(authToken) : undefined;
 //       const isAuthenticated = user ? true : false;
 //       dispatch({
-//         type: authConstants.VERIFY_TOKEN_SUCCESS,
+//         type: constants.VERIFY_TOKEN_SUCCESS,
 //         payload: { authToken, user, isAuthenticated },
 //       });
 //     } catch (err) {
 //       dispatch({
-//         type: authConstants.VERIFY_TOKEN_FAILURE,
+//         type: constants.VERIFY_TOKEN_FAILURE,
 //         payload: { error: err.message },
 //       });
 //     }

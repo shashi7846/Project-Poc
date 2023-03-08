@@ -7,7 +7,7 @@ import {
   faInr,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-import { PostPropertyDetails } from "../../Api/Api";
+import { PostPropertyDetails } from "../../api/Api";
 import { toast } from "react-toastify";
 import { validatePropertyDetailsForm } from "../helpers";
 import { PuffLoader } from "react-spinners";
@@ -68,7 +68,7 @@ function PropertyDetails(props) {
       ) : (
         <div className="container mt-5">
           <div className="d-flex justify-content-center h-100">
-            <div className="card bg-dark col-4">
+            <div className="card bg-dark col-5">
               <div className="card-header ">
                 <h3 className="login-name text-light">
                   <b>PropertyDetails</b>

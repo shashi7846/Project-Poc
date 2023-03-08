@@ -5,12 +5,18 @@ body {
 }
 
 body {
-  background-image: url("./Images/poc-background.jpg");
+  /* background-image: url("./Images/poc-background.jpg"); */
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.3) 75%,
+      rgba(255, 255, 255, 0.308)
+    ),
+    url("./Images/poc-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
 }
 
 .button-nav {
@@ -23,7 +29,7 @@ body {
 .landingpage {
   text-align: left;
   margin-top: 200px;
-  color: darkred;
+  color: rgb(127, 12, 12);
 }
 .h {
   font-size: 60px;
@@ -87,3 +93,15 @@ body {
 .footer {
   background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
+/* .homeContainer {
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.6) 75%,
+      rgba(255, 255, 255, 0.308)
+    ),
+    url("Images/landing.png");
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+} */
