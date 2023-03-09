@@ -4,7 +4,7 @@ import "./Faqs.css";
 
 export default function faqs() {
   return (
-    <div className="faq_area section_padding_130 ">
+    <div className="  ">
       <div className="container-fluid faq-container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-8 col-lg-6">
@@ -17,13 +17,10 @@ export default function faqs() {
                 animationName: "fadeInUp",
               }}
             >
-              <h3 className="text-light mt-2">
-                <span>Frequently </span> Asked Questions
-              </h3>
-              <p className="text-light">
-                Appland is completely creative, lightweight, clean &amp; super
-                responsive app landing page.
-              </p>
+              <h1 className="text-light mt-2">
+                <b>Frequently Asked Questions</b>
+              </h1>
+
               <div className="line"></div>
             </div>
           </div>

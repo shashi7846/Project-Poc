@@ -1,21 +1,30 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "../../App.css";
+import { logoutAction } from "../../redux/actions/auth";
 
 const Navbar = () => {
-  let Navigate = useNavigate();
+  const navigate = useNavigate();
   // function handleClick() {
   //   Navigate("/login");
   // }
+  const dispatch = useDispatch();
 
+  const isAuthenticated = useSelector((s) => s.state.isAuthenticated);
+  // const handleLogInOut = () => {
+  //   const userId = localStorage.getItem("id");
+  //   if (userId) {
+  //     localStorage.removeItem("id");
+  //     dispatch(logoutAction(navigate));
+  //     navigate("/");
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // };
   const handleLogInOut = () => {
-    const userId = localStorage.getItem("id");
-    if (userId) {
-      localStorage.removeItem("id");
-      Navigate("/");
-    } else {
-      Navigate("/login");
-    }
+    if (isAuthenticated) dispatch(logoutAction(navigate));
+    else navigate("/login");
   };
 
   return (
@@ -112,69 +121,18 @@ const Navbar = () => {
               )}
 
               <li className="nav-item">
-                <Link
+                <a
                   className="nav-item nav-link text-light"
                   onClick={handleLogInOut}
-                  to="/login"
                 >
-                  {localStorage.getItem("id") ? "Logout" : "Login"}
-                </Link>
+                  {/* {localStorage.getItem("id") ? "Logout" : "Login"} */}
+                  {isAuthenticated ? "Logout" : "Login"}
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      {/* <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-        <Link className="navbar-brand text-light" to="/">
-          <img
-            src="favicon.ico"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt=""
-          />
-          -Loan
-        </Link>
-
-        <button
-          className="navbar-toggler bg-light"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <div className="navbar-nav ms-auto">
-            <Link className="nav-item nav-link text-light" to="/">
-              {localStorage.getItem("id") ? "" : "Home"}
-            </Link>
-            <Link className="nav-item nav-link text-light" to="/howtoapply">
-              {localStorage.getItem("id") ? "" : "How to Apply"}
-            </Link>
-            <Link className="nav-item nav-link text-light" to="/about">
-              {localStorage.getItem("id") ? "" : "About"}
-            </Link>
-            <Link className="nav-item nav-link text-light" to="/register">
-              {localStorage.getItem("id") ? "" : "Register"}
-            </Link>
-
-            <Link className="nav-item nav-link text-light" to="/contactus">
-              {localStorage.getItem("id") ? "Contact-Us" : ""}
-            </Link>
-            <Link
-              className="nav-item nav-link text-light"
-              onClick={handleLogInOut}
-              to="/login"
-            >
-              {localStorage.getItem("id") ? "Logout" : "Login"}
-            </Link>
-          </div>
-        </div>
-      </nav> */}
     </div>
   );
 };

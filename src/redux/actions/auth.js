@@ -1,4 +1,6 @@
 import axios from "axios";
+import { GetuserbyEmailAndPassword } from "../../api/Api";
+import { ValidateLoginForm } from "../../components/login/Login";
 import { validateRegistrationForm } from "../../components/register/Register";
 
 import { errorToast, successToast } from "../../components/Toast";
@@ -9,7 +11,17 @@ export const registrationAction = (userData, navigate) => {
     try {
       dispatch({ type: constants.SIGNUP_REQUEST });
       const errors = validateRegistrationForm(userData);
-      if (Object.keys(errors).length) throw new Error(Object.values(errors)[0]);
+
+      if (Object.keys(errors).length) {
+        const error = Object.values(errors)[0];
+        errorToast(error);
+        dispatch({
+          type: constants.SIGNUP_FAILURE,
+          payload: { error },
+          message: "error",
+        });
+        return;
+      }
       const { data } = await axios.post(
         `http://localhost:8000/register`,
         userData
@@ -19,16 +31,11 @@ export const registrationAction = (userData, navigate) => {
 
       dispatch({
         type: constants.SIGNUP_SUCCESS,
+        payload: { data },
+        message: "Successs",
       });
 
       navigate("/login");
-      // const { message } = res;
-      // successToast("success");
-
-      // dispatch({
-      //   type: constants.REGISTRATION_SUCCESS,
-      //   payload: { message: "success" },
-      // });
     } catch (err) {
       errorToast(err.response.data.error);
       dispatch({
@@ -40,100 +47,66 @@ export const registrationAction = (userData, navigate) => {
 };
 
 export const LoginAction = (user, navigate) => {
+  console.log(user);
   return async (dispatch) => {
     try {
       dispatch({ type: constants.SIGNIN_REQUEST });
-      const res = await axios.post(`http://localhost:4000/login`, {
-        ...user,
-      });
-      if (res.status === 201) {
-        successToast("Login Successful");
+      const errors = ValidateLoginForm(user);
+
+      if (Object.keys(errors).length) {
+        throw new Error(Object.values(errors)[0]);
+      }
+      const { data: userData } = await axios.get(
+        `http://localhost:4000/users?email=${user.email}&password=${user.password}`
+      );
+      //  const { data: userData } = await GetuserbyEmailAndPassword();
+      if (userData.length !== 0) {
+        localStorage.setItem("id", userData[0].id);
 
         dispatch({
           type: constants.SIGNIN_SUCCESS,
+          payload: { ...userData, isAuthenticated: true },
         });
 
+        successToast("Login Successful");
         navigate("/propertydetails");
+      } else {
+        throw new Error("user invalid");
       }
     } catch (err) {
-      errorToast("Login Failure");
+      errorToast(err.message);
       dispatch({
         type: constants.SIGNIN_FAILURE,
-        payload: { error: "Login Failure" },
+        payload: err.message,
       });
     }
   };
 };
 
-// export const signoutAction = (user, navigate) => {
-//   return async (dispatch) => {
-//     try {
-//       dispatch({ type: constants.SIGNOUT_REQUEST });
-//       const res = await axios.post(`/auth/signout`, {
-//         ...user,
-//       });
-//       if (res.status === 200) {
-//         const { message } = res.data;
-//         successToast(message);
-//         navigate('/');
-//         Cookies.set('OSNR_Token', undefined);
-//         dispatch({
-//           type: constants.SIGNOUT_SUCCESS,
-//           payload: { message },
-//         });
-//       }
-//     } catch (err) {
-//       dispatch({
-//         type: constants.SIGNOUT_FAILURE,
-//         payload: { error: err.response.data.error },
-//       });
-//     }
-//   };
-// };
+export const logoutAction = (navigate) => {
+  return async (dispatch) => {
+    try {
+      dispatch({ type: constants.SIGNOUT_REQUEST });
+      const user = await axios.post("http://localhost:8000/logout");
 
-// export const forgotAction = (user, resetForm, navigate) => {
-//   return async (dispatch) => {
-//     try {
-//       dispatch({ type: constants.FORGOT_REQUEST });
-//       const res = await axios.patch(`/auth/forgot`, {
-//         ...user,
-//       });
-//       if (res.status === 200) {
-//         const { message } = res.data;
-//         successToast(message);
-//         dispatch({
-//           type: constants.FORGOT_SUCCESS,
-//           payload: { message },
-//         });
-//         resetForm();
-//         navigate('/signin');
-//       }
-//     } catch (err) {
-//       if (hasUserError(err)) errorToast(err.response.data.error);
-//       dispatch({
-//         type: constants.FORGOT_FAILURE,
-//         payload: { error: err.response.data.error },
-//       });
-//     }
-//   };
-// };
+      const { message } = user.data;
 
-// export const verifyTokenAction = () => {
-//   return async (dispatch) => {
-//     try {
-//       dispatch({ type: constants.VERIFY_TOKEN_REQUEST });
-//       const authToken = Cookies.get(tokeName);
-//       const user = authToken ? decodeToken(authToken) : undefined;
-//       const isAuthenticated = user ? true : false;
-//       dispatch({
-//         type: constants.VERIFY_TOKEN_SUCCESS,
-//         payload: { authToken, user, isAuthenticated },
-//       });
-//     } catch (err) {
-//       dispatch({
-//         type: constants.VERIFY_TOKEN_FAILURE,
-//         payload: { error: err.message },
-//       });
-//     }
-//   };
-// };
+      successToast(message);
+
+      localStorage.removeItem("id");
+
+      dispatch({
+        type: constants.SIGNOUT_SUCCESS,
+        payload: {},
+      });
+
+      navigate("/");
+    } catch (err) {
+      errorToast(err.message);
+      dispatch({
+        type: constants.SIGNOUT_FAILURE,
+        payload: { error: err.response.data.error },
+      });
+    }
+  };
+};

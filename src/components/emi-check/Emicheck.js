@@ -8,13 +8,15 @@ import {
   faInr,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { emiCalculator } from "../helpers";
+import { emiCalculator, emicheckValidation } from "../validators";
 import { PuffLoader } from "react-spinners";
+import { errorToast } from "../Toast";
 
 const defaultData = {
   loanAmount: "",
   netIncome: "",
   tenure: "",
+  price: "",
   interest: "9.5",
 };
 
@@ -43,6 +45,11 @@ function Emicheck() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    const errors = emicheckValidation(emicheck);
+    if (errors.length) {
+      errorToast(errors[0]);
+      return;
+    }
     const { loanAmount, netIncome, tenure, interest } = emicheck;
     const emi = emiCalculator(loanAmount, interest, tenure);
     const maxLoanAmount = Math.floor(((+netIncome * 0.5) / +emi) * loanAmount);
@@ -72,6 +79,26 @@ function Emicheck() {
               </div>
               <div className="card-body" style={{ backgroundColor: "#b30000" }}>
                 <form onSubmit={handleOnSubmit}>
+                  <div className="input-group form-group mt-3 mb-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text text-white">
+                        <FontAwesomeIcon
+                          className="fa-beat-fade"
+                          icon={faInr}
+                          style={{ fontSize: "1.75em", color: "black" }}
+                        />
+                      </span>
+                    </div>
+
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="price"
+                      placeholder="Enter property price"
+                      value={emicheck.price}
+                      onChange={handleChange}
+                    />
+                  </div>
                   <div className="input-group form-group">
                     <div className="input-group-prepend">
                       <span className="input-group-text text-white">
@@ -123,6 +150,9 @@ function Emicheck() {
                     </div>
                     <input
                       type="number"
+                      min={12}
+                      max={120}
+                      step={12}
                       className="form-control"
                       name="tenure"
                       value={emicheck.tenure}
@@ -130,8 +160,21 @@ function Emicheck() {
                       placeholder=" Select Loan Tenure"
                     />
                   </div>
+                  <div>
+                    <label htmlFor="loan-amount" className="form-label"></label>
+                    <input
+                      type="range"
+                      className="form-range mt-2 mb-3"
+                      name="tenure"
+                      min={12}
+                      max={120}
+                      step={12}
+                      value={emicheck.tenure}
+                      onChange={handleChange}
+                    ></input>
+                  </div>
 
-                  <div className="input-group form-group mt-3">
+                  <div className="input-group form-group">
                     <div className="input-group-prepend">
                       <span className="input-group-text text-white">
                         <FontAwesomeIcon
@@ -150,24 +193,24 @@ function Emicheck() {
                       disabled
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group mt-2">
                     <Link
                       type="submit"
                       to="/Propertydetails"
-                      className="btn float-right  btn-dark mt-2 "
+                      className="btn float-right  btn-dark mt-2 px-4 "
                     >
                       <b>Back</b>
                     </Link>
                     <Link
                       type="submit"
                       to="/"
-                      className="btn float-right  btn-dark mt-2 "
+                      className="btn float-right  btn-dark mt-2 px-4"
                     >
                       Close
                     </Link>
                     <button
                       type="submit"
-                      className="btn float-right  btn-dark mt-2"
+                      className="btn float-right  btn-dark mt-2 px-4"
                     >
                       Check Eligibility
                     </button>
@@ -184,8 +227,8 @@ function Emicheck() {
           <Modal.Title>Loan Eligibility</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Emi For Entered Amount will be<b>₹ {eligibility.loanAmount}</b> at EMI
-          <b> ₹ {eligibility.emi}</b>
+          {/* Emi For Entered Amount will be<b>₹ {eligibility.loanAmount}</b> at EMI
+          <b> ₹ {eligibility.emi}</b> */}
           <br /> You are Eligible for a Maximum loan of{" "}
           <b>₹ {eligibility.maxLoanAmount} </b>
           at EMI <b>₹ {eligibility.maxEmi}</b>

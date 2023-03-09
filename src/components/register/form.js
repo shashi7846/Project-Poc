@@ -13,7 +13,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
     <div>
       <div className="container mt-5">
         <div className="d-flex justify-content-center h-100">
-          <div className="card bg-dark col-5">
+          <div className="card bg-dark col-6">
             <div className="card-header ">
               <h3 className="login-name text-light">Register</h3>
             </div>
@@ -105,7 +105,6 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     className="form-control"
                     placeholder="date of birth"
                     value={userData.date}
-                    // onChange={(e) => setPassword(e.target.value)}
                     onChange={inputChange}
                   />
                 </div>
@@ -178,11 +177,11 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group mt-2">
                   <input
                     type="submit"
                     value="Register"
-                    className="btn float-right  btn-dark mt-1"
+                    className="btn float-right  btn-dark mt-1 px-4"
                   />
                 </div>
               </form>

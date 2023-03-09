@@ -58,7 +58,7 @@ export default function Footer() {
                     <span className="fa-li">
                       <i className="bi bi-envelope fs-3"></i>
                     </span>
-                    <span className="ms-3">MLoan@outlook.com</span>
+                    <span className="ms-3">MLoan@outlook.co</span>
                   </li>
                   <li className="mb-3">
                     <span className="fa-li">
@@ -95,7 +95,7 @@ export default function Footer() {
             // style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           >
             &#169; 2023 Copyright:
-            <a className="text-danger ">M-Loan.com</a>{" "}
+            <a className="text-danger">M-Loan.com</a>
           </div>
         </footer>
       </div>

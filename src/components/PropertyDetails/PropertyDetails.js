@@ -4,20 +4,19 @@ import {
   faAreaChart,
   faQuestion,
   faMapMarker,
-  faInr,
+  faMapPin,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { PostPropertyDetails } from "../../api/Api";
 import { toast } from "react-toastify";
-import { validatePropertyDetailsForm } from "../helpers";
+import { validatePropertyDetailsForm } from "../validators";
 import { PuffLoader } from "react-spinners";
 
 const defaultData = {
   address: "",
   area: "",
-  price: "",
-  downPayment: "",
-  loanAmount: "",
+  pincode: "",
+
   purposeOfLoan: "",
 };
 
@@ -119,7 +118,7 @@ function PropertyDetails(props) {
                       <span className="input-group-text text-white">
                         <FontAwesomeIcon
                           className="fa-beat-fade"
-                          icon={faInr}
+                          icon={faMapPin}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
                       </span>
@@ -127,48 +126,9 @@ function PropertyDetails(props) {
                     <input
                       type="number"
                       className="form-control"
-                      name="price"
-                      placeholder="Property Price"
-                      value={propertyDetails.price}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="input-group form-group mt-3">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
-                        <FontAwesomeIcon
-                          className="fa-beat-fade"
-                          icon={faInr}
-                          style={{ fontSize: "1.75em", color: "black" }}
-                        ></FontAwesomeIcon>
-                      </span>
-                    </div>
-                    <input
-                      type="number"
-                      className="form-control"
-                      name="downPayment"
-                      placeholder="Enter Down Payment"
-                      value={propertyDetails.downPayment}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="input-group form-group mt-3">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
-                        <FontAwesomeIcon
-                          className="fa-beat-fade"
-                          icon={faInr}
-                          style={{ fontSize: "1.75em", color: "black" }}
-                        />
-                      </span>
-                    </div>
-
-                    <input
-                      type="number"
-                      className="form-control"
-                      name="loanAmount"
-                      placeholder="Enter Loan Amount"
-                      value={propertyDetails.loanAmount}
+                      name="pincode"
+                      placeholder="Pincode"
+                      value={propertyDetails.pincode}
                       onChange={handleChange}
                     />
                   </div>
@@ -188,7 +148,7 @@ function PropertyDetails(props) {
                       id="Purpose Of Loan"
                       value={propertyDetails.purposeOfLoan}
                       onChange={handleChange}
-                      style={{ width: "347px ", borderRadius: "7px" }}
+                      style={{ width: "453px ", borderRadius: "7px" }}
                     >
                       <option value="Purpose Of Loan" disabled>
                         Purpose Of Loan {""}
@@ -204,14 +164,14 @@ function PropertyDetails(props) {
                     <Link
                       type="submit"
                       to="/"
-                      className="btn float-right  btn-dark mt-2  "
+                      className="btn float-right  btn-dark mt-4 px-4  "
                     >
                       Back
                     </Link>
                     <button
                       type="submit"
                       value="Submit"
-                      className="btn float-right  btn-dark mt-2"
+                      className="btn float-right  btn-dark mt-4 px-4 "
                     >
                       Submit
                     </button>

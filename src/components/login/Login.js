@@ -3,11 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 //import { faMailBulk } from "@react-icons/all-files/fa/faMailBulk";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey, faMailBulk } from "@fortawesome/free-solid-svg-icons";
-import { GetuserbyEmailAndPassword, Postlogin } from "../../api/Api";
+// import { GetuserbyEmailAndPassword, Postlogin } from "../../api/Api";
 
-import { ValidateLoginForm } from "../helpers";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
+import { LoginAction } from "../../redux/actions/auth";
+
+export const ValidateLoginForm = (input) => {
+  const errors = [];
+
+  if (!input.email) {
+    errors.push("Email is Required");
+  }
+  if (!input.password) {
+    errors.push("Please enter Password");
+  }
+  return errors;
+};
 
 const LoginData = {
   email: "",
@@ -24,27 +36,33 @@ function Login() {
 
   let dispatch = useDispatch();
 
-  const HandleOnSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      const errors = ValidateLoginForm(Logindetails);
-      if (errors.length) {
-        throw new Error(errors[0]);
-      }
-      const { data: userData } = await GetuserbyEmailAndPassword(Logindetails);
-      if (userData.length !== 0) {
-        localStorage.setItem("id", userData[0].id);
-        console.log(userData);
-        setLogindetails(LoginData);
-        Navigate("/propertydetails");
-      }
-    } catch (error) {
-      toast.error(error.message, {
-        position: "top-center",
-        theme: "dark",
-      });
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    dispatch(LoginAction(Logindetails, Navigate));
   };
+
+  // const HandleOnSubmit = async (e) => {
+  //   try {
+  //     e.preventDefault();
+  //     const errors = ValidateLoginForm(Logindetails);
+  //     if (errors.length) {
+  //       throw new Error(errors[0]);
+  //     }
+  //     const { data: userData } = await GetuserbyEmailAndPassword(Logindetails);
+  //     if (userData.length !== 0) {
+  //       localStorage.setItem("id", userData[0].id);
+  //       console.log(userData);
+  //       setLogindetails(LoginData);
+  //       Navigate("/propertydetails");
+  //     }
+  //   } catch (error) {
+  //     toast.error(error.message, {
+  //       position: "top-center",
+  //       theme: "dark",
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -60,7 +78,7 @@ function Login() {
               className="card-body"
               // style={{ backgroundColor: "rgb(199 19 6)" }}
             >
-              <form onSubmit={HandleOnSubmit}>
+              <form onSubmit={handleLogin}>
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
                     <span className="input-group-text text-white">
@@ -107,7 +125,7 @@ function Login() {
                   <button
                     type="submit"
                     value="Login"
-                    className="btn float-right  btn-dark mt-1"
+                    className="btn float-right  btn-dark mt-2 px-4"
                   >
                     Login
                   </button>
