@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 //import { faMailBulk } from "@react-icons/all-files/fa/faMailBulk";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faKey, faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 // import { GetuserbyEmailAndPassword, Postlogin } from "../../api/Api";
 
 // import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { LoginAction } from "../../redux/actions/auth";
+import { useDispatch } from 'react-redux';
+import { LoginAction } from '../../redux/actions/auth';
 
 export const ValidateLoginForm = (input) => {
   const errors = [];
 
   if (!input.email) {
-    errors.push("Email is Required");
+    errors.push('Email is Required');
   }
   if (!input.password) {
-    errors.push("Please enter Password");
+    errors.push('Please enter Password');
   }
   return errors;
 };
 
 const LoginData = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 function Login() {
@@ -42,60 +42,41 @@ function Login() {
     dispatch(LoginAction(Logindetails, Navigate));
   };
 
-  // const HandleOnSubmit = async (e) => {
-  //   try {
-  //     e.preventDefault();
-  //     const errors = ValidateLoginForm(Logindetails);
-  //     if (errors.length) {
-  //       throw new Error(errors[0]);
-  //     }
-  //     const { data: userData } = await GetuserbyEmailAndPassword(Logindetails);
-  //     if (userData.length !== 0) {
-  //       localStorage.setItem("id", userData[0].id);
-  //       console.log(userData);
-  //       setLogindetails(LoginData);
-  //       Navigate("/propertydetails");
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.message, {
-  //       position: "top-center",
-  //       theme: "dark",
-  //     });
-  //   }
-  // };
-
   return (
     <>
       <div className="container mt-5 h-100">
         <div className="d-flex justify-content-center h-100">
-          <div className="card col-5" style={{ backgroundColor: "black" }}>
+          <div className="card col-5" style={{ backgroundColor: 'black' }}>
             <div className="card-header Cardtop ">
               <h3 className="login-name text-light">
                 <b>Login</b>
               </h3>
             </div>
-            <div
-              className="card-body"
-              // style={{ backgroundColor: "rgb(199 19 6)" }}
-            >
+            <div className="card-body">
               <form onSubmit={handleLogin}>
                 <div className="input-group form-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
+                    <span
+                      className="input-group-text text-white"
+                      style={{ minWidth: '150px' }}
+                    >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faMailBulk}
                         style={{
-                          fontSize: "1.75em",
-                          color: "black",
+                          fontSize: '1.75em',
+                          color: 'black',
                         }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark ms-2">
+                        <b>Email Id</b>
+                      </label>
                     </span>
                   </div>
                   <input
                     type="email"
                     name="email"
-                    className="form-control"
+                    className="form-control ms-2"
                     placeholder="email"
                     value={Logindetails.email}
                     onChange={handleChange}
@@ -103,18 +84,24 @@ function Login() {
                 </div>
                 <div className="input-group form-group mt-3">
                   <div className="input-group-prepend">
-                    <span className="input-group-text text-white">
+                    <span
+                      className="input-group-text text-white "
+                      style={{ minWidth: '150px' }}
+                    >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faKey}
-                        style={{ fontSize: "1.75em", color: "black" }}
+                        style={{ fontSize: '1.75em', color: 'black' }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark ms-2">
+                        <b>Password</b>
+                      </label>
                     </span>
                   </div>
                   <input
                     type="password"
                     name="password"
-                    className="form-control"
+                    className="form-control ms-2"
                     placeholder="password"
                     value={Logindetails.password}
                     onChange={handleChange}

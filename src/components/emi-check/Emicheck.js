@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCalendar,
   faPercent,
   faInr,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { emiCalculator, emicheckValidation } from "../validators";
-import { PuffLoader } from "react-spinners";
-import { errorToast } from "../Toast";
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { emiCalculator, emicheckValidation } from '../validators';
+import { PuffLoader } from 'react-spinners';
+import { errorToast } from '../Toast';
 
 const defaultData = {
-  loanAmount: "",
-  netIncome: "",
-  tenure: "",
-  price: "",
-  interest: "9.5",
+  loanAmount: '',
+  netIncome: '',
+  tenure: '',
+  price: '',
+  interest: '9.5',
 };
 
 function Emicheck() {
@@ -56,7 +56,6 @@ function Emicheck() {
     const maxEmi = emiCalculator(maxLoanAmount, interest, tenure);
     setEligibility({ loanAmount, emi, maxLoanAmount, maxEmi });
     setShow(true);
-    // navigate('/');
   };
 
   return (
@@ -64,7 +63,7 @@ function Emicheck() {
       {loading ? (
         <PuffLoader
           className="Loader"
-          color={"#e60909"}
+          color={'#e60909'}
           loading={loading}
           size={100}
         />
@@ -77,17 +76,20 @@ function Emicheck() {
                   <b>Check Emi</b>
                 </h3>
               </div>
-              <div className="card-body" style={{ backgroundColor: "#b30000" }}>
+              <div className="card-body" style={{ backgroundColor: '#b30000' }}>
                 <form onSubmit={handleOnSubmit}>
                   <div className="input-group form-group mt-3 mb-3">
                     <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
+                      <span
+                        className="input-group-text text-white"
+                        style={{ minWidth: '150px' }}
+                      >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faInr}
-                          style={{ fontSize: "1.75em", color: "black" }}
-                        />{" "}
-                        <label className="text-dark">
+                          style={{ fontSize: '1.75em', color: 'black' }}
+                        />{' '}
+                        <label className="text-dark ms-2">
                           <b>PropertyPrice</b>
                         </label>
                       </span>
@@ -95,7 +97,7 @@ function Emicheck() {
 
                     <input
                       type="number"
-                      className="form-control"
+                      className="form-control ms-2"
                       name="price"
                       placeholder="Enter property price"
                       value={emicheck.price}
@@ -104,20 +106,23 @@ function Emicheck() {
                   </div>
                   <div className="input-group form-group">
                     <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
+                      <span
+                        className="input-group-text text-white"
+                        style={{ minWidth: '150px' }}
+                      >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faInr}
-                          style={{ fontSize: "1.75em", color: "black" }}
+                          style={{ fontSize: '1.75em', color: 'black' }}
                         ></FontAwesomeIcon>
-                        <label className="text-dark">
+                        <label className="text-dark ms-2">
                           <b>LoanAmount</b>
                         </label>
                       </span>
                     </div>
                     <input
                       type="number"
-                      className="form-control"
+                      className="form-control ms-2"
                       name="loanAmount"
                       value={emicheck.loanAmount}
                       onChange={handleChange}
@@ -126,20 +131,23 @@ function Emicheck() {
                   </div>
                   <div className="input-group form-group mt-3">
                     <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
+                      <span
+                        className="input-group-text text-white"
+                        style={{ minWidth: '150px' }}
+                      >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faInr}
-                          style={{ fontSize: "1.75em", color: "black" }}
+                          style={{ fontSize: '1.75em', color: 'black' }}
                         ></FontAwesomeIcon>
-                        <label className="text-dark">
+                        <label className="text-dark ms-2">
                           <b>Income P/M</b>
                         </label>
                       </span>
                     </div>
                     <input
                       type="number"
-                      className="form-control"
+                      className="form-control ms-2"
                       name="netIncome"
                       value={emicheck.netIncome}
                       onChange={handleChange}
@@ -149,13 +157,16 @@ function Emicheck() {
 
                   <div className="input-group form-group mt-3">
                     <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
+                      <span
+                        className="input-group-text text-white"
+                        style={{ minWidth: '150px' }}
+                      >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faCalendar}
-                          style={{ fontSize: "1.75em", color: "black" }}
+                          style={{ fontSize: '1.75em', color: 'black' }}
                         ></FontAwesomeIcon>
-                        <label className="text-dark">
+                        <label className="text-dark ms-2">
                           <b>LoanTenure</b>
                         </label>
                       </span>
@@ -165,7 +176,7 @@ function Emicheck() {
                       min={12}
                       max={120}
                       step={12}
-                      className="form-control"
+                      className="form-control ms-2"
                       name="tenure"
                       value={emicheck.tenure}
                       onChange={handleChange}
@@ -188,13 +199,16 @@ function Emicheck() {
 
                   <div className="input-group form-group">
                     <div className="input-group-prepend">
-                      <span className="input-group-text text-white">
+                      <span
+                        className="input-group-text text-white"
+                        style={{ minWidth: '150px' }}
+                      >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faPercent}
-                          style={{ fontSize: "1.75em", color: "black" }}
-                        />{" "}
-                        <label className="text-dark">
+                          style={{ fontSize: '1.75em', color: 'black' }}
+                        />{' '}
+                        <label className="text-dark ms-2">
                           <b>InterestRate</b>
                         </label>
                       </span>
@@ -202,7 +216,7 @@ function Emicheck() {
 
                     <input
                       type="number"
-                      className="form-control"
+                      className="form-control ms-2"
                       value={emicheck.interest}
                       placeholder="Rate Of Interest"
                       disabled
@@ -244,7 +258,7 @@ function Emicheck() {
         <Modal.Body>
           {/* Emi For Entered Amount will be<b>₹ {eligibility.loanAmount}</b> at EMI
           <b> ₹ {eligibility.emi}</b> */}
-          <br /> You are Eligible for a Maximum loan of{" "}
+          <br /> <h4>You are Eligible for a Maximum loan of</h4> <br />
           <b>₹ {eligibility.maxLoanAmount} </b>
           at EMI <b>₹ {eligibility.maxEmi}</b>
         </Modal.Body>
@@ -253,8 +267,8 @@ function Emicheck() {
             Close
           </Button>
           <Button variant="primary" onClick={handleClose}>
-            <Link to="/confirmpage" style={{ color: "white" }}>
-              {" "}
+            <Link to="/confirmpage" style={{ color: 'white' }}>
+              {' '}
               Proceed
             </Link>
           </Button>
