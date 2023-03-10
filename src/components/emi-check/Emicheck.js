@@ -71,7 +71,7 @@ function Emicheck() {
       ) : (
         <div className="container mt-5">
           <div className="d-flex justify-content-center h-100">
-            <div className="card bg-dark col-5">
+            <div className="card bg-dark col-6">
               <div className="card-header ">
                 <h3 className="login-name text-light">
                   <b>Check Emi</b>
@@ -86,7 +86,10 @@ function Emicheck() {
                           className="fa-beat-fade"
                           icon={faInr}
                           style={{ fontSize: "1.75em", color: "black" }}
-                        />
+                        />{" "}
+                        <label className="text-dark">
+                          <b>PropertyPrice</b>
+                        </label>
                       </span>
                     </div>
 
@@ -107,6 +110,9 @@ function Emicheck() {
                           icon={faInr}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>LoanAmount</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -126,6 +132,9 @@ function Emicheck() {
                           icon={faInr}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>Income P/M</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -146,6 +155,9 @@ function Emicheck() {
                           icon={faCalendar}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>LoanTenure</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -181,7 +193,10 @@ function Emicheck() {
                           className="fa-beat-fade"
                           icon={faPercent}
                           style={{ fontSize: "1.75em", color: "black" }}
-                        />
+                        />{" "}
+                        <label className="text-dark">
+                          <b>InterestRate</b>
+                        </label>
                       </span>
                     </div>
 
@@ -206,13 +221,13 @@ function Emicheck() {
                       to="/"
                       className="btn float-right  btn-dark mt-2 px-4"
                     >
-                      Close
+                      <b>Close</b>
                     </Link>
                     <button
                       type="submit"
                       className="btn float-right  btn-dark mt-2 px-4"
                     >
-                      Check Eligibility
+                      <b>Check Eligibility</b>
                     </button>
                   </div>
                 </form>

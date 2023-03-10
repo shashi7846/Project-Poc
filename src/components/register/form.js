@@ -55,6 +55,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faUser}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark">
+                        <b>UserName</b>
+                      </label>
                     </span>
                   </div>
                   <input
@@ -75,6 +78,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faMailBulk}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark">
+                        <b>Email ID</b>
+                      </label>
                     </span>
                   </div>
                   <input
@@ -96,6 +102,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faCalendar}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark">
+                        <b>DateOfBirth</b>
+                      </label>
                     </span>
                   </div>
                   <input
@@ -117,6 +126,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faKey}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark">
+                        <b>Password</b>
+                      </label>
                     </span>
                   </div>
                   <input
@@ -138,6 +150,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faKey}
                         style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
+                      <label className="text-dark">
+                        <b>ConfirmPassword</b>
+                      </label>
                     </span>
                   </div>
                   <input
@@ -163,6 +178,9 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                         icon={faPhone}
                         style={{ fontSize: "1.75em", color: "black" }}
                       />
+                      <label className="text-dark">
+                        <b>MobileNo.</b>
+                      </label>
                     </span>
                   </div>
 

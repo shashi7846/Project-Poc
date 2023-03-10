@@ -75,7 +75,7 @@ function PropertyDetails(props) {
               </div>
               <div className="card-body" style={{ backgroundColor: "#b30000" }}>
                 <form onSubmit={handleOnSubmit}>
-                  <div className="input-group form-group ">
+                  <div className="input-group form-group text-light ">
                     <div className="input-group-prepend">
                       <span className="input-group-text text-white">
                         <FontAwesomeIcon
@@ -83,6 +83,9 @@ function PropertyDetails(props) {
                           icon={faMapMarker}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>Address</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -102,6 +105,9 @@ function PropertyDetails(props) {
                           icon={faAreaChart}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>Sq.Yard</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -121,6 +127,9 @@ function PropertyDetails(props) {
                           icon={faMapPin}
                           style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>Pincode</b>
+                        </label>
                       </span>
                     </div>
                     <input
@@ -139,8 +148,15 @@ function PropertyDetails(props) {
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faQuestion}
-                          style={{ fontSize: "1.75em", color: "black" }}
+                          style={{
+                            fontSize: "1.75em",
+                            color: "black",
+                            width: "30px",
+                          }}
                         ></FontAwesomeIcon>
+                        <label className="text-dark">
+                          <b>Status</b>
+                        </label>
                       </span>
                     </div>{" "}
                     <select
@@ -148,7 +164,7 @@ function PropertyDetails(props) {
                       id="Purpose Of Loan"
                       value={propertyDetails.purposeOfLoan}
                       onChange={handleChange}
-                      style={{ width: "453px ", borderRadius: "7px" }}
+                      style={{ width: "392px ", borderRadius: "7px" }}
                     >
                       <option value="Purpose Of Loan" disabled>
                         Purpose Of Loan {""}

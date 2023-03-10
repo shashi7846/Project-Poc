@@ -45,17 +45,20 @@ const Home = () => {
         </p>
         {!localStorage.getItem("id") && (
           <>
-            <button className="btn btn-outline-dark home-btn1 " type="submit">
+            <button
+              className="btn btn-outline-dark home-btn1 bg-dark"
+              type="submit"
+            >
               <Link className="nav-item nav-link text-light" to="/register">
                 Register
               </Link>
             </button>
             <button
-              className="btn btn-outline-dark txt-light home-btn2"
+              className="btn btn-outline-dark txt-light home-btn2 bg-dark"
               type="submit"
             >
               <Link
-                className="nav-item nav-link text-light"
+                className="nav-item nav-link text-light "
                 onClick={handleLogInOut}
                 to="/login"
               >
