@@ -1,21 +1,21 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import Login from './components/login/Login';
-import Home from './components/home/Home';
-import Register from './components/register/Register';
-import Navbar from './components/navbar/Navbar';
-import Emicheck from './components/emi-check/Emicheck';
-import PropertyDetails from './components/propertydetails/PropertyDetails';
-import Howtoapply from './components/howtoapply/Howtoapply';
-import Contactus from './components/contactus/Contactus';
-import About from './components/about/About';
-import Footer from './components/footer/Footer';
-import { ToastContainer } from 'react-toastify';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-toastify/dist/ReactToastify.css';
-import Confirmpage from './components/confirmpage/Confirmpage';
-import Services from './components/services/Services';
-import Faqs from './components/faqs/Faqs';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Login from "./components/login/Login";
+import Home from "./components/home/Home";
+import Register from "./components/register/Register";
+import Navbar from "./components/navbar/Navbar";
+import Emicheck from "./components/emi-check/Emicheck";
+import PropertyDetails from "./components/propertydetails/PropertyDetails";
+import Howtoapply from "./components/howtoapply/Howtoapply";
+import Contactus from "./components/contactus/Contactus";
+import About from "./components/about/About";
+import Footer from "./components/footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import Confirmpage from "./components/confirmpage/Confirmpage";
+import Services from "./components/services/Services";
+import Faqs from "./components/faqs/Faqs";
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function App() {
 }
 
 const ProtectedRoute = ({ component }) => {
-  return localStorage.getItem('id') ? component : <Login />;
+  return localStorage.getItem("id") ? component : <Login />;
 };
 
 export default App;

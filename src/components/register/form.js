@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faKey,
   faMailBulk,
   faPhone,
   faUser,
   faCalendar,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 const Registrationform = ({ handleRegistration, userData, inputChange }) => {
   return (
     <div>
@@ -18,7 +18,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
               <h3 className="login-name text-light">Register</h3>
             </div>
 
-            <div className="card-body" style={{ backgroundColor: '#b30000' }}>
+            <div className="card-body" style={{ backgroundColor: "#b30000" }}>
               <form onSubmit={handleRegistration}>
                 <div className="form-check form-check-inline mt-3 text-light">
                   <h4>
@@ -51,12 +51,12 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white"
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faUser}
-                        style={{ fontSize: '1.75em', color: 'black' }}
+                        style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                       <label className="text-dark ms-2">
                         <b>UserName</b>
@@ -77,12 +77,12 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white"
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faMailBulk}
-                        style={{ fontSize: '1.75em', color: 'black' }}
+                        style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                       <label className="text-dark ms-2">
                         <b>Email ID</b>
@@ -104,14 +104,14 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white "
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faCalendar}
                         style={{
-                          fontSize: '1.75em',
-                          color: 'black',
+                          fontSize: "1.75em",
+                          color: "black",
                         }}
                       ></FontAwesomeIcon>
                       <label className="text-dark ms-2">
@@ -134,12 +134,12 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white"
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faKey}
-                        style={{ fontSize: '1.75em', color: 'black' }}
+                        style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                       <label className="text-dark ms-2">
                         <b>Password</b>
@@ -161,12 +161,12 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white "
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faKey}
-                        style={{ fontSize: '1.75em', color: 'black' }}
+                        style={{ fontSize: "1.75em", color: "black" }}
                       ></FontAwesomeIcon>
                       <label className="text-dark ms-2">
                         <b>Confirm</b>
@@ -192,12 +192,12 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <div className="input-group-prepend">
                     <span
                       className="input-group-text text-white"
-                      style={{ minWidth: '150px' }}
+                      style={{ minWidth: "150px" }}
                     >
                       <FontAwesomeIcon
                         className="fa-beat-fade"
                         icon={faPhone}
-                        style={{ fontSize: '1.75em', color: 'black' }}
+                        style={{ fontSize: "1.75em", color: "black" }}
                       />
                       <label className="text-dark ms-2">
                         <b>MobileNo.</b>
