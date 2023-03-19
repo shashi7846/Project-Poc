@@ -58,6 +58,7 @@ const Contactus = () => {
                 </div>
                 <input
                   type="email"
+                  aria-label="email"
                   className="form-control"
                   placeholder="email"
                   value={email}

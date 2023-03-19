@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -95,7 +96,7 @@ export default function Footer() {
             // style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
           >
             &#169; 2023 Copyright:
-            <a className="text-danger">M-Loan.com</a>
+            <Link className="text-danger">M-Loan.com</Link>
           </div>
         </footer>
       </div>

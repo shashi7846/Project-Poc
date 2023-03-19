@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAreaChart,
   faQuestion,
   faMapMarker,
   faMapPin,
   faCircleInfo,
-} from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate } from 'react-router-dom';
-import { PostPropertyDetails } from '../../api/Api';
-import { toast } from 'react-toastify';
-import { validatePropertyDetailsForm } from '../validators';
-import { PuffLoader } from 'react-spinners';
-import { OverlayTrigger } from 'react-bootstrap';
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
+import { PostPropertyDetails } from "../../api/Api";
+import { toast } from "react-toastify";
+import { validatePropertyDetailsForm } from "../validators";
+import { PuffLoader } from "react-spinners";
+import { OverlayTrigger } from "react-bootstrap";
 
-import Popover from 'react-bootstrap/Popover';
+import Popover from "react-bootstrap/Popover";
 
 export const customPopover = (
   <Popover id="popover-basic">
@@ -24,16 +24,16 @@ export const customPopover = (
       <div>2). " - "</div>
       <div>3). " / "</div>
       <div>4). Numbers 0-9</div>
-      <div>{'->'} Anything other than this is not acceptable.</div>
+      <div>{"->"} Anything other than this is not acceptable.</div>
     </Popover.Body>
   </Popover>
 );
 
 const defaultData = {
-  address: '',
-  area: '',
-  pincode: '',
-  purposeOfLoan: '',
+  address: "",
+  area: "",
+  pincode: "",
+  purposeOfLoan: "",
 };
 
 function PropertyDetails(props) {
@@ -58,15 +58,15 @@ function PropertyDetails(props) {
       if (errors.length) {
         throw new Error(errors[0]);
       }
-      await PostPropertyDetails(localStorage.getItem('id'), {
+      await PostPropertyDetails(localStorage.getItem("id"), {
         propertyDetails,
       });
       setPropertyDetails(defaultData);
-      navigate('/emicheck');
+      navigate("/emicheck");
     } catch (error) {
       toast.error(error.message, {
-        position: 'top-center',
-        theme: 'dark',
+        position: "top-center",
+        theme: "dark",
       });
     }
   };
@@ -76,7 +76,7 @@ function PropertyDetails(props) {
       {loading ? (
         <PuffLoader
           className="Loader"
-          color={'#e60909'}
+          color={"#e60909"}
           loading={loading}
           size={100}
         />
@@ -89,18 +89,18 @@ function PropertyDetails(props) {
                   <b>PropertyDetails</b>
                 </h3>
               </div>
-              <div className="card-body" style={{ backgroundColor: '#b30000' }}>
+              <div className="card-body" style={{ backgroundColor: "#b30000" }}>
                 <form onSubmit={handleOnSubmit}>
                   <div className="input-group form-group text-light ">
                     <div className="input-group-prepend">
                       <span
                         className="input-group-text text-white"
-                        style={{ minWidth: '150px' }}
+                        style={{ minWidth: "150px" }}
                       >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faMapMarker}
-                          style={{ fontSize: '1.75em', color: 'black' }}
+                          style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
                         <label className="text-dark ms-2">
                           <b>Address</b>
@@ -113,7 +113,7 @@ function PropertyDetails(props) {
                           <FontAwesomeIcon
                             className="fa ms-2"
                             icon={faCircleInfo}
-                            style={{ fontSize: '1rem', color: 'black' }}
+                            style={{ fontSize: "1rem", color: "black" }}
                           ></FontAwesomeIcon>
                         </OverlayTrigger>
                       </span>
@@ -121,6 +121,7 @@ function PropertyDetails(props) {
                     <input
                       type="text"
                       name="address"
+                      aria-label="address"
                       className="form-control ms-2"
                       placeholder="Enter your address"
                       value={propertyDetails.address}
@@ -131,12 +132,12 @@ function PropertyDetails(props) {
                     <div className="input-group-prepend">
                       <span
                         className="input-group-text text-white"
-                        style={{ minWidth: '150px' }}
+                        style={{ minWidth: "150px" }}
                       >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faAreaChart}
-                          style={{ fontSize: '1.75em', color: 'black' }}
+                          style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
                         <label className="text-dark ms-2">
                           <b>Sq.Yard</b>
@@ -156,12 +157,12 @@ function PropertyDetails(props) {
                     <div className="input-group-prepend">
                       <span
                         className="input-group-text text-white"
-                        style={{ minWidth: '150px' }}
+                        style={{ minWidth: "150px" }}
                       >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faMapPin}
-                          style={{ fontSize: '1.75em', color: 'black' }}
+                          style={{ fontSize: "1.75em", color: "black" }}
                         ></FontAwesomeIcon>
                         <label className="text-dark ms-2">
                           <b>Pincode</b>
@@ -182,39 +183,39 @@ function PropertyDetails(props) {
                     <div className="input-group-prepend">
                       <span
                         className="input-group-text text-white"
-                        style={{ minWidth: '150px' }}
+                        style={{ minWidth: "150px" }}
                       >
                         <FontAwesomeIcon
                           className="fa-beat-fade"
                           icon={faQuestion}
                           style={{
-                            fontSize: '1.75em',
-                            color: 'black',
-                            width: '30px',
+                            fontSize: "1.75em",
+                            color: "black",
+                            width: "30px",
                           }}
                         ></FontAwesomeIcon>
                         <label className="text-dark  ">
                           <b>Status</b>
                         </label>
                       </span>
-                    </div>{' '}
+                    </div>{" "}
                     <select
                       className="ms-2"
                       name="purposeOfLoan"
                       id="Purpose Of Loan"
                       value={propertyDetails.purposeOfLoan}
                       onChange={handleChange}
-                      style={{ width: '442px ', borderRadius: '7px' }}
+                      style={{ width: "442px ", borderRadius: "7px" }}
                     >
                       <option value="Purpose Of Loan" disabled>
-                        Purpose Of Loan {''}
+                        Purpose Of Loan {""}
                       </option>
                       <option value="UnderConstruction">
                         UnderConstruction
                       </option>
                       <option value="Ready To Move">Ready To Move</option>
                       <option value="Home Renovation">Home Renovation</option>
-                    </select>{' '}
+                    </select>{" "}
                   </div>
                   <div className="form-group">
                     <Link
