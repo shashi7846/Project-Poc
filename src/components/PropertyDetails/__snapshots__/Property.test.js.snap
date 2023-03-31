@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`property page Matching the snapshot of the propertydetails page 1`] = `
+<DocumentFragment>
+  <div
+    class="container mt-5"
+  >
+    <div
+      class="d-flex justify-content-center h-100"
+    >
+      <div
+        class="card bg-dark col-6"
+      >
+        <div
+          class="card-header "
+        >
+          <h3
+            class="login-name text-light"
+          >
+            <b>
+              PropertyDetails
+            </b>
+          </h3>
+        </div>
+        <div
+          class="card-body"
+          style="background-color: rgb(179, 0, 0);"
+        >
+          <form>
+            <div
+              class="input-group form-group text-light "
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-location-pin fa-beat-fade"
+                    data-icon="location-pin"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 384 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      Address
+                    </b>
+                  </label>
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-circle-info fa ms-2"
+                    data-icon="circle-info"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1rem; color: black;"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <input
+                aria-label="address"
+                class="form-control ms-2"
+                name="address"
+                placeholder="Enter your address"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group mt-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-chart-area fa-beat-fade"
+                    data-icon="chart-area"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm96 288H448c17.7 0 32-14.3 32-32V251.8c0-7.6-2.7-15-7.7-20.8l-65.8-76.8c-12.1-14.2-33.7-15-46.9-1.8l-21 21c-10 10-26.4 9.2-35.4-1.6l-39.2-47c-12.6-15.1-35.7-15.4-48.7-.6L135.9 215c-5.1 5.8-7.9 13.3-7.9 21.1v84c0 17.7 14.3 32 32 32z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      Sq.Yard
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                aria-label="area"
+                class="form-control ms-2"
+                name="area"
+                placeholder="Enter Area in square Yards"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group mt-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-map-pin fa-beat-fade"
+                    data-icon="map-pin"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M320 144c0 79.5-64.5 144-144 144S32 223.5 32 144S96.5 0 176 0s144 64.5 144 144zM176 80c8.8 0 16-7.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96c0 8.8 7.2 16 16 16s16-7.2 16-16c0-35.3 28.7-64 64-64zM144 480V317.1c10.4 1.9 21.1 2.9 32 2.9s21.6-1 32-2.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      Pincode
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                aria-label="Pincode"
+                class="form-control ms-2"
+                name="pincode"
+                placeholder="Pincode"
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group mt-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-question fa-beat-fade"
+                    data-icon="question"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black; width: 30px;"
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark  "
+                  >
+                    <b>
+                      Status
+                    </b>
+                  </label>
+                </span>
+              </div>
+               
+              <select
+                class="ms-2"
+                id="Purpose Of Loan"
+                name="purposeOfLoan"
+                style="width: 442px; border-radius: 7px;"
+              >
+                <option
+                  disabled=""
+                  value="Purpose Of Loan"
+                >
+                  Purpose Of Loan 
+                </option>
+                <option
+                  value="UnderConstruction"
+                >
+                  UnderConstruction
+                </option>
+                <option
+                  value="Ready To Move"
+                >
+                  Ready To Move
+                </option>
+                <option
+                  value="Home Renovation"
+                >
+                  Home Renovation
+                </option>
+              </select>
+               
+            </div>
+            <div
+              class="form-group"
+            >
+              <a
+                class="btn float-right  btn-dark mt-4 px-4  "
+                href="/"
+                type="submit"
+              >
+                Back
+              </a>
+              <button
+                class="btn float-right  btn-dark mt-4 px-4 "
+                type="submit"
+                value="Submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

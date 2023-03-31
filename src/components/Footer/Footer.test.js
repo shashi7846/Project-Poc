@@ -10,14 +10,19 @@ describe("Footer Page", () => {
     );
     expect(text[0]).toBeInTheDocument();
 
-    expect(screen.getByText("Search something")).toBeInTheDocument();
-    expect(screen.getByText("About Company")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /Search something/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /About Company/i })
+    ).toBeInTheDocument();
   });
   test("should render intial page roles", () => {
     render(renderComponent(<Footer />));
     expect(
       screen.getByRole("link", { name: "M-Loan.com" })
     ).toBeInTheDocument();
+
     expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
   });
   test("should render correct business hours", () => {
@@ -25,8 +30,9 @@ describe("Footer Page", () => {
 
     expect(screen.getByText("Mon - Fri:")).toBeInTheDocument();
   });
-  //   test("render footer component correctly", () => {
-  //     const { snapshot } = render(renderComponent(<Footer />));
-  //     expect(snapshot).toMatchSnapshot();
-  //   });
+  test("should test snapshot", () => {
+    //render( renderComponent(<Footer/>));
+    const { asFragment } = render(renderComponent(<Footer />));
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

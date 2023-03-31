@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emicheck page Matching the snapshot of the navbar 1`] = `
+<DocumentFragment>
+  <div
+    class="container mt-5"
+  >
+    <div
+      class="d-flex justify-content-center h-100"
+    >
+      <div
+        class="card bg-dark col-6"
+      >
+        <div
+          class="card-header "
+        >
+          <h3
+            class="login-name text-light"
+          >
+            <b>
+              Check Emi
+            </b>
+          </h3>
+        </div>
+        <div
+          class="card-body"
+          style="background-color: rgb(179, 0, 0);"
+        >
+          <form>
+            <div
+              class="input-group form-group mt-3 mb-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-indian-rupee-sign fa-beat-fade"
+                    data-icon="indian-rupee-sign"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                   
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      PropertyPrice
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                class="form-control ms-2"
+                name="price"
+                placeholder="Enter property price"
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-indian-rupee-sign fa-beat-fade"
+                    data-icon="indian-rupee-sign"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      LoanAmount
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                class="form-control ms-2"
+                name="loanAmount"
+                placeholder="Enter Loan Amount"
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group mt-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-indian-rupee-sign fa-beat-fade"
+                    data-icon="indian-rupee-sign"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 320 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      Income P/M
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                class="form-control ms-2"
+                name="netIncome"
+                placeholder="Net Income Per Month"
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group mt-3"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-calendar fa-beat-fade"
+                    data-icon="calendar"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      LoanTenure
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                class="form-control ms-2"
+                max="120"
+                min="12"
+                name="tenure"
+                placeholder=" Select Loan Tenure"
+                step="12"
+                type="number"
+                value=""
+              />
+            </div>
+            <div>
+              <label
+                class="form-label"
+                for="loan-amount"
+              />
+              <input
+                class="form-range mt-2 mb-3"
+                max="120"
+                min="12"
+                name="tenure"
+                step="12"
+                type="range"
+                value=""
+              />
+            </div>
+            <div
+              class="input-group form-group"
+            >
+              <div
+                class="input-group-prepend"
+              >
+                <span
+                  class="input-group-text text-white"
+                  style="min-width: 150px;"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="svg-inline--fa fa-percent fa-beat-fade"
+                    data-icon="percent"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style="font-size: 1.75em; color: black;"
+                    viewBox="0 0 384 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M374.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-320 320c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l320-320zM128 128c0-35.3-28.7-64-64-64S0 92.7 0 128s28.7 64 64 64s64-28.7 64-64zM384 384c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                   
+                  <label
+                    class="text-dark ms-2"
+                  >
+                    <b>
+                      InterestRate
+                    </b>
+                  </label>
+                </span>
+              </div>
+              <input
+                class="form-control ms-2"
+                disabled=""
+                placeholder="Rate Of Interest"
+                type="number"
+                value="9.5"
+              />
+            </div>
+            <div
+              class="form-group mt-2"
+            >
+              <a
+                class="btn float-right  btn-dark mt-2 px-4 "
+                href="/Propertydetails"
+                type="submit"
+              >
+                <b>
+                  Back
+                </b>
+              </a>
+              <a
+                class="btn float-right  btn-dark mt-2 px-4"
+                href="/"
+                type="submit"
+              >
+                <b>
+                  Close
+                </b>
+              </a>
+              <button
+                class="btn float-right  btn-dark mt-2 px-4"
+                type="submit"
+              >
+                <b>
+                  Check Eligibility
+                </b>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Page should test snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <footer
+      class="text-light text-center text-lg-start Footer "
+      style="background-color: rgb(135, 0, 0);"
+    >
+      <div
+        class="container p-4"
+      >
+        <div
+          class="row mt-4"
+        >
+          <div
+            class="col-lg-4 col-md-12 mb-4 mb-md-0"
+          >
+            <h5
+              class="text-uppercase mb-4"
+            >
+              <b>
+                About Company
+              </b>
+            </h5>
+            <p>
+              Welcome to M-Loan, your trusted source for mortgage loans. We're committed to helping you achieve your dream of homeownership by providing personalized, expert support and a wide range of loan options.
+            </p>
+            <div
+              class="mt-4"
+            >
+              <i
+                class="bi bi-facebook fs-2"
+              />
+              <i
+                class="bi bi-youtube fs-2 mx-3"
+              />
+              <i
+                class="bi bi-twitter   fs-2 mx-3"
+              />
+              <i
+                class="bi bi-whatsapp  fs-2 mx-3"
+              />
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4 mb-md-0"
+          >
+            <h5
+              class="text-uppercase mb-4 pb-1"
+            >
+              <b>
+                Search something
+              </b>
+            </h5>
+            <div
+              class="input-group text-dark mb-4"
+            >
+              <input
+                class="form-control form-control-lg"
+                id="formControlLg"
+                placeholder="Search"
+                type="text"
+              />
+            </div>
+            <ul
+              class="fa-ul"
+              style="margin-left: 1.65em;"
+            >
+              <li
+                class="mb-3"
+              >
+                <span
+                  class="fa-li"
+                >
+                  <i
+                    class="bi bi-house  fs-3 "
+                  />
+                </span>
+                <span
+                  class="ms-3"
+                >
+                  Gachibowli,Hyderabad,500032
+                </span>
+              </li>
+              <li
+                class="mb-3"
+              >
+                <span
+                  class="fa-li"
+                >
+                  <i
+                    class="bi bi-envelope fs-3"
+                  />
+                </span>
+                <span
+                  class="ms-3"
+                >
+                  MLoan@outlook.co
+                </span>
+              </li>
+              <li
+                class="mb-3"
+              >
+                <span
+                  class="fa-li"
+                >
+                  <i
+                    class="bi bi-telephone-inbound fs-3 "
+                  />
+                </span>
+                <span
+                  class="ms-3 my-auto "
+                >
+                  +91 9000000890
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4 mb-md-0"
+          >
+            <h5
+              class="text-uppercase mb-4"
+            >
+              <b>
+                Opening hours
+              </b>
+            </h5>
+            <table
+              class="table text-center text-white"
+            >
+              <tbody
+                class="fw-normal"
+              >
+                <tr>
+                  <td>
+                    Mon - Fri:
+                  </td>
+                  <td>
+                    8am - 9pm
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Sat - Sun:
+                  </td>
+                  <td>
+                    8am - 1pm
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-center p-3 footer"
+      >
+        © 2023 Copyright:
+        <a
+          class="text-danger"
+          href="/"
+        >
+          M-Loan.com
+        </a>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

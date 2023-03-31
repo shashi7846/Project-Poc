@@ -6,9 +6,7 @@ import { logoutAction } from "../../redux/actions/auth";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  // function handleClick() {
-  //   Navigate("/login");
-  // }
+
   const dispatch = useDispatch();
 
   const isAuthenticated = useSelector((s) => s.state.isAuthenticated);
@@ -34,6 +32,7 @@ const Navbar = () => {
           <Link className="navbar-brand text-light" to="/">
             <img
               src="favicon.ico"
+              aria-label="favicon"
               width="30"
               height="30"
               className="d-inline-block align-top"

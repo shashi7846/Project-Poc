@@ -53,4 +53,8 @@ describe("Login page", () => {
 
     expect(screen.getByRole("heading", { name: "Login" })).toBeInTheDocument();
   });
+  test("Matching the snapshot of the navbar", async () => {
+    const { asFragment } = render(renderComponent(<Login />));
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

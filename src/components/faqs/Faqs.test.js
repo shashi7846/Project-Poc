@@ -9,4 +9,8 @@ describe("Faqs Page", () => {
       screen.getByRole("heading", { name: "Frequently Asked Questions" })
     ).toBeInTheDocument();
   });
+  test("Matching the snapshot of the navbar", async () => {
+    const { asFragment } = render(renderComponent(<Faqs />));
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

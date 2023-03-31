@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmpage Matching the snapshot of the navbar 1`] = `
+<DocumentFragment>
+  <div
+    class="card bg-dark mt-5"
+  >
+    <h3
+      class="card-header text-light Cardtop"
+    >
+      <b>
+        About Us
+      </b>
+    </h3>
+    <div
+      class="card-body"
+      style="background-color: rgb(125, 13, 16);"
+    >
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Introduction: Welcome to M-Loan, your trusted source for mortgage loans. We're committed to helping you achieve your dream of homeownership by providing personalized, expert support and a wide range of loan options.
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Why Choose Us: At M-Loan, we understand that choosing a mortgage lender can be a confusing and overwhelming experience. That's why we offer competitive rates, a streamlined application process, and a team of experienced professionals who are dedicated to making the loan process as easy and stress-free as possible.
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Our Loan Options: Whether you're a first-time homebuyer, looking to refinance, or interested in investment property, we have the loan options to meet your needs. From fixed-rate and adjustable-rate mortgages, to government-backed loans and jumbo loans, we'll help you find the best loan option for your specific financial situation.
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Pre-approval Process: Getting pre-approved for a mortgage loan can save you time and hassle when it comes to purchasing a home. Our pre-approval process is quick, easy, and comes with no obligation. Simply provide us with some basic information about yourself and your financial situation, and we'll let you know how much you can afford to borrow.
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Start Your Journey: Take the first step towards homeownership and start your journey with M-Loan. Apply for a mortgage loan today and experience the difference that comes from working with a trusted and experienced lender.
+      </h5>
+    </div>
+  </div>
+</DocumentFragment>
+`;

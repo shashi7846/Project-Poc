@@ -29,6 +29,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <input
                     className="form-check-input"
                     type="radio"
+                    aria-label="Male"
                     name="gender"
                     id="male"
                     value="M"
@@ -93,6 +94,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     type="email"
                     id="email"
                     name="email"
+                    aria-label="email"
                     className="form-control ms-2"
                     placeholder="email"
                     value={userData.email}
@@ -220,6 +222,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                   <input
                     type="submit"
                     value="Register"
+                    aria-label="Register"
                     className="btn float-right  btn-dark mt-1 px-4"
                   />
                 </div>

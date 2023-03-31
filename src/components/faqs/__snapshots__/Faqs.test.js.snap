@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Faqs Page Matching the snapshot of the navbar 1`] = `
+<DocumentFragment>
+  <div
+    class="  "
+  >
+    <div
+      class="container-fluid faq-container"
+    >
+      <div
+        class="row justify-content-center"
+      >
+        <div
+          class="col-12 col-sm-8 col-lg-6"
+        >
+          <div
+            class="section_heading text-center wow fadeInUp"
+            data-wow-delay="0.2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+          >
+            <h1
+              class="text-light mt-2"
+            >
+              <b>
+                Frequently Asked Questions
+              </b>
+            </h1>
+            <div
+              class="line"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="row justify-content-center"
+      >
+        <div
+          class="col-12 col-sm-10 col-lg-8"
+        >
+          <div
+            class="accordion faq-accordian"
+            id="faqAccordion"
+          >
+            <div
+              class="card border-0 wow fadeInUp"
+              data-wow-delay="0.2s"
+              style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"
+            >
+              <div
+                class="card-header"
+                id="headingOne"
+              >
+                <h6
+                  aria-controls="collapseOne"
+                  aria-expanded="true"
+                  class="mb-0 collapsed"
+                  data-bs-target="#collapseOne"
+                  data-bs-toggle="collapse"
+                >
+                  <b>
+                     How will M-loan decide the home loan amount i am eligible for?
+                  </b>
+                  <span
+                    class="lni-chevron-up"
+                  />
+                </h6>
+              </div>
+              <div
+                aria-labelledby="headingOne"
+                class="collapse"
+                data-bs-parent="#faqAccordion"
+                id="collapseOne"
+              >
+                <div
+                  class="card-body text-light"
+                >
+                  <p>
+                    M-loan will determine your Home Loan Eligibility largely by your income and repayment capacity. Other important factors include your age, qualification, number of dependants, your spouse's income (if any), assets & liabilities, savings history and the stability & continuity of occupation.
+                  </p>
+                  <p>
+                    Appland is completely creative, lightweight, clean & super responsive app landing page.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-0 wow fadeInUp"
+              data-wow-delay="0.3s"
+              style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;"
+            >
+              <div
+                class="card-header"
+                id="headingTwo"
+              >
+                <h6
+                  aria-controls="collapseTwo"
+                  aria-expanded="true"
+                  class="mb-0 collapsed "
+                  data-bs-target="#collapseTwo"
+                  data-bs-toggle="collapse"
+                >
+                  <b>
+                     Do i get tax benefits on the loan?
+                  </b>
+                  <span
+                    class="lni-chevron-up"
+                  />
+                </h6>
+              </div>
+              <div
+                aria-labelledby="headingTwo"
+                class="collapse"
+                data-bs-parent="#faqAccordion"
+                id="collapseTwo"
+              >
+                <div
+                  class="card-body text-light"
+                >
+                  <p>
+                    Yes. You are eligible for tax benefits on the principal and interest components of your Home Loan under the Income Tax Act, 1961. As the benefits could vary each year, please do check with our Loan Counselor about the tax benefits which you could avail on your loan.
+                  </p>
+                  <p>
+                    Appland is completely creative, lightweight, clean & super responsive app landing page.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="card border-0 wow fadeInUp"
+              data-wow-delay="0.4s"
+              style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;"
+            >
+              <div
+                class="card-header"
+                id="headingThree"
+              >
+                <h6
+                  aria-controls="collapseThree"
+                  aria-expanded="true"
+                  class="mb-0 collapsed"
+                  data-bs-target="#collapseThree"
+                  data-bs-toggle="collapse"
+                >
+                  <b>
+                    What security will i have to provide?
+                  </b>
+                  <span
+                    class="lni-chevron-up"
+                  />
+                </h6>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                class="collapse"
+                data-bs-parent="#faqAccordion"
+                id="collapseThree"
+              >
+                <div
+                  class="card-body text-light"
+                >
+                  <p>
+                    Security of the loan would generally be security interest on the property being financed by us and / or any other collateral / interim security as may be required by us. It is extremely important for you to ensure that the title to the property is clear, marketable and free from encumbrance. There should not be any existing mortgage, loan or litigation, which is likely to adversely affect the title to the property.
+                  </p>
+                  <p>
+                    Appland is completely creative, lightweight, clean & super responsive app landing page.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+            data-wow-delay="0.5s"
+            style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;"
+          >
+            <i
+              class="lni-emoji-sad"
+            />
+            <p
+              class="mb-0 px-2 text-light"
+            >
+              Can't find your answers?
+            </p>
+            <a
+              href="#"
+            >
+               
+            </a>
+            <a
+              href="/contactus"
+            >
+              Contact us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

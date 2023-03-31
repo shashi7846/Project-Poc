@@ -19,4 +19,8 @@ describe("Home page", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Login" })).toBeInTheDocument();
   });
+  test("Matching the snapshot of the navbar", async () => {
+    const { asFragment } = render(renderComponent(<Home />));
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

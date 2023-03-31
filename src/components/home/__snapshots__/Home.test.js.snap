@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page Matching the snapshot of the navbar 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <h1>
+        <center
+          class="landingpage"
+        >
+          <h1
+            class="h"
+          >
+            Welcome to 
+            <b>
+              M-Loan
+            </b>
+          </h1>
+        </center>
+      </h1>
+      <p
+        class="paragraph text-light"
+      >
+        Planning to take a Mortage Loan? Use this Mortage Loan EMI Calculator
+        <br />
+        to estimate the EMI amount payable per month to repay the Mortage
+        <br />
+        Loan. The Mortage Loan EMI Calculator is easy to use. All you need to
+        <br />
+        select is the Loan amount, Loan Tenure . After selecting the Loan
+        <br />
+        Amount, and The Loan Tenure, the calculator will estimate the monthly
+        <br />
+        EMI amount and the total Interest payable till the end of the loan tenure.
+      </p>
+      <button
+        class="btn btn-outline-dark home-btn1 bg-dark"
+        type="submit"
+      >
+        <a
+          class="nav-item nav-link text-light"
+          href="/register"
+        >
+          Register
+        </a>
+      </button>
+      <button
+        class="btn btn-outline-dark txt-light home-btn2 bg-dark"
+        type="submit"
+      >
+        <a
+          class="nav-item nav-link text-light "
+          href="/login"
+        >
+          Login
+        </a>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

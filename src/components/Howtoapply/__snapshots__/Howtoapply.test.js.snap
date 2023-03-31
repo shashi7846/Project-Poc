@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`howtoapply page should test snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="card bg-dark mt-5"
+  >
+    <h3
+      class="card-header text-light Cardtop"
+    >
+      <b>
+        How To Apply
+      </b>
+    </h3>
+    <div
+      class="card-body"
+      style="background-color: rgb(125, 13, 16);"
+    >
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Visit the website and fill the online form
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Enter your personal and property details
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Fill in your financial and income data to access the loan offer
+      </h5>
+      <h5
+        class="card-text text-light"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-circle-check fa-beat-fade"
+          data-icon="circle-check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+            fill="currentColor"
+          />
+        </svg>
+         Submit Your Loan Application
+      </h5>
+      <h6
+        class="text-light"
+      >
+        Our relationship manager will take you through the process of hassel free and smooth borrowing experience.
+      </h6>
+    </div>
+  </div>
+</DocumentFragment>
+`;

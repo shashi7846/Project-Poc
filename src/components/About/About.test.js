@@ -9,4 +9,8 @@ describe("Confirmpage", () => {
       screen.getByRole("heading", { name: "About Us" })
     ).toBeInTheDocument();
   });
+  test("Matching the snapshot of the navbar", async () => {
+    const { asFragment } = render(renderComponent(<About />));
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
