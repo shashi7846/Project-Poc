@@ -68,6 +68,7 @@ exports[`Login page Matching the snapshot of the navbar 1`] = `
                 class="form-control ms-2"
                 name="email"
                 placeholder="email"
+                required=""
                 type="email"
                 value=""
               />

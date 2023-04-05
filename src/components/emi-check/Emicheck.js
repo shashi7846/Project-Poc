@@ -216,6 +216,7 @@ function Emicheck() {
 
                   <input
                     type="number"
+                    aria-label="interest"
                     className="form-control ms-2"
                     value={emicheck.interest}
                     placeholder="Rate Of Interest"

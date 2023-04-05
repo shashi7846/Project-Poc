@@ -12,6 +12,7 @@ import { LoginAction } from "../../redux/actions/auth";
 export const ValidateLoginForm = (input) => {
   const errors = [];
 
+  console.log(input);
   if (!input.email) {
     errors.push("Email is Required");
   }
@@ -81,6 +82,7 @@ function Login() {
                     placeholder="email"
                     value={Logindetails.email}
                     onChange={handleChange}
+                    // required="required"
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -107,7 +109,7 @@ function Login() {
                     placeholder="password"
                     value={Logindetails.password}
                     onChange={handleChange}
-                    required="required"
+                    // required="required"
                   />
                 </div>
 
@@ -115,6 +117,8 @@ function Login() {
                   <button
                     type="submit"
                     value="Login"
+                    name="Login"
+                    aria-label="Login"
                     className="btn float-right  btn-dark mt-2 px-4"
                   >
                     Login

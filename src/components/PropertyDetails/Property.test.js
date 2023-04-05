@@ -34,6 +34,14 @@ describe("property page", () => {
     await user.type(Yards, mockLoginData.area);
     expect(Yards).toHaveAttribute("type", "text");
     expect(Yards).toHaveValue(mockLoginData.area);
+
+    // const Yards1 = screen.getByRole("textbox", { name: "area" });
+    // await user.type(Yards, mockLoginData.area);
+    // expect(Yards1).toHaveValue(mockLoginData.area);
+
+    // const Address1 = screen.getByRole("textbox", { name: "address" });
+    // await user.type(Address1, mockLoginData.address);
+    // expect(Address1).toHaveValue(mockLoginData.address);
   });
   test("Matching the snapshot of the propertydetails page", async () => {
     const { asFragment } = render(renderComponent(<PropertyDetails />));

@@ -1,7 +1,7 @@
 export const mockLoginData = {
   name: "mock user",
-  email: "mockuser@gmail.com",
-  password: "Qwety@123",
+  email: "yash@email.com",
+  password: "1234",
 };
 export const mock_Invalid_LoginData = {
   name: "m",

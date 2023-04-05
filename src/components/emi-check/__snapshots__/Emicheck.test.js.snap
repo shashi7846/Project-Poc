@@ -255,6 +255,7 @@ exports[`emicheck page Matching the snapshot of the navbar 1`] = `
                 </span>
               </div>
               <input
+                aria-label="interest"
                 class="form-control ms-2"
                 disabled=""
                 placeholder="Rate Of Interest"
