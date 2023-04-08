@@ -82,7 +82,7 @@ function Login() {
                     placeholder="email"
                     value={Logindetails.email}
                     onChange={handleChange}
-                    // required="required"
+                    required
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -109,7 +109,7 @@ function Login() {
                     placeholder="password"
                     value={Logindetails.password}
                     onChange={handleChange}
-                    // required="required"
+                    required
                   />
                 </div>
 

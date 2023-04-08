@@ -25,25 +25,24 @@ describe("emicheck page", () => {
 
   test("should handle input changes in property", async () => {
     render(renderComponent(<Emichecktest />));
-    //screen.logTestingPlaygroundURL();
-    // const Property = screen.getByRole("spinbutton", {
-    //   name: /enter property price/i,
-    // });
+    screen.logTestingPlaygroundURL();
 
-    //await user.type(Property, mockLoginData.PropertyPrice);
-    //screen.logTestingPlaygroundURL();
+    const Property = screen.getByPlaceholderText(/enter property price/i);
+    await user.type(Property, mockLoginData.PropertyPrice);
+    expect(Property).toHaveValue(+mockLoginData.PropertyPrice);
 
-    //expect(Property).toHaveValue(mockLoginData.PropertyPrice);
     const Interest = screen.getByRole("spinbutton", {
       name: /interest/i,
     });
-    await user.type(Interest, mockLoginData.InterestRate);
-    expect(Interest).toHaveValue(mockLoginData.InterestRate);
+    expect(Interest).toHaveValue(9.5);
 
-    // const loanamount = screen.getByPlaceholderText(/enter loan amount/i);
-    // await user.type(loanamount, mockLoginData.LoanAmount);
-    // expect(loanamount).toHaveAttribute("type", "number");
-    // expect(loanamount).toHaveValue(mockLoginData.LoanAmount);
+    const loanamount = screen.getByPlaceholderText(/enter loan amount/i);
+    await user.type(loanamount, mockLoginData.LoanAmount);
+    expect(loanamount).toHaveValue(+mockLoginData.LoanAmount);
+
+    const netincome = screen.getByPlaceholderText(/net income per month/i);
+    await user.type(netincome, mockLoginData.netIncome);
+    expect(netincome).toHaveValue(+mockLoginData.netIncome);
   });
 
   test("Matching the snapshot of the navbar", async () => {
