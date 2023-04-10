@@ -252,7 +252,9 @@ exports[`property page Matching the snapshot of the propertydetails page 1`] = `
                 Back
               </a>
               <button
+                aria-label="Submit"
                 class="btn float-right  btn-dark mt-4 px-4 "
+                name="Submit"
                 type="submit"
                 value="Submit"
               >

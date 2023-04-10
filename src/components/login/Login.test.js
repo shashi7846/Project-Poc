@@ -46,26 +46,27 @@ describe("Login page", () => {
     //expect(password).toHaveValue(mockLoginData.password);
 
     await user.click(button);
-    waitFor(()=>{
+    waitFor(() => {
       expect(store.getState().state.message).toBe("allow");
-    })
-    
+    });
   });
 
   test("should handle errors in Login", () => {
     render(renderComponent(<Login />));
-    screen.logTestingPlaygroundURL()
+    screen.logTestingPlaygroundURL();
     const email = screen.getByRole("textbox", { name: "email" });
     // const password = screen.getByPlaceholderText("password");
-    
-    user.click(screen.getByRole('button', {
-      name: /login/i
-    }))
-    let error=screen.findByText("Please fill in this field.")
-    waitFor(()=>{
+
+    user.click(
+      screen.getByRole("button", {
+        name: /login/i,
+      })
+    );
+    let error = screen.findByText("Please fill in this field.");
+    waitFor(() => {
       expect(error).toBeInTheDocument();
-    })
-    
+    });
+
     // password.focus();
     // await user.tab();
     // expect(screen.getByText("Password Required")).toBeInTheDocument();
@@ -78,8 +79,6 @@ describe("Login page", () => {
 
     expect(screen.getByRole("heading", { name: "Login" })).toBeInTheDocument();
   });
-
-
 
   test("Matching the snapshot of the Login", async () => {
     const { asFragment } = render(renderComponent(<Login />));

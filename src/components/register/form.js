@@ -70,7 +70,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     name="username"
                     className="form-control ms-2"
                     placeholder="Username"
-                    value={userData.username}
+                    value={userData?.username}
                     onChange={inputChange}
                   />
                 </div>
@@ -97,7 +97,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     aria-label="email"
                     className="form-control ms-2"
                     placeholder="email"
-                    value={userData.email}
+                    value={userData?.email}
                     onChange={inputChange}
                   />
                 </div>
@@ -127,7 +127,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     name="date"
                     className="form-control ms-2"
                     placeholder="date of birth"
-                    value={userData.date}
+                    value={userData?.date}
                     onChange={inputChange}
                   />
                 </div>
@@ -154,7 +154,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     name="password"
                     className="form-control ms-2 "
                     placeholder="set password"
-                    value={userData.password}
+                    value={userData?.password}
                     onChange={inputChange}
                   />
                 </div>
@@ -181,7 +181,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     name="confirmPassword"
                     className="form-control ms-2"
                     placeholder="confirm password"
-                    value={userData.confirmPassword}
+                    value={userData?.confirmPassword}
                     onChange={inputChange}
                   />
                 </div>
@@ -213,7 +213,7 @@ const Registrationform = ({ handleRegistration, userData, inputChange }) => {
                     name="phone"
                     className="form-control ms-2"
                     placeholder="Enter Mobile Number"
-                    value={userData.phone}
+                    value={userData?.phone}
                     onChange={inputChange}
                   />
                 </div>

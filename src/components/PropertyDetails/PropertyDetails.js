@@ -227,6 +227,8 @@ function PropertyDetails(props) {
                   </Link>
                   <button
                     type="submit"
+                    aria-label="Submit"
+                    name="Submit"
                     value="Submit"
                     className="btn float-right  btn-dark mt-4 px-4 "
                   >

@@ -240,6 +240,9 @@ function Emicheck() {
                   </Link>
                   <button
                     type="submit"
+                    name="Submit"
+                    aria-label="Submit"
+                    value="Submit"
                     className="btn float-right  btn-dark mt-2 px-4"
                   >
                     <b>Check Eligibility</b>

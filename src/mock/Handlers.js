@@ -19,4 +19,20 @@ export const handlers = [
       );
     }
   }),
+  rest.post(`http://localhost:4000/users/`, async (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json([
+        {
+          pincode: "500012",
+        },
+        {
+          area: "5000",
+        },
+        {
+          address: "5-1-140",
+        },
+      ])
+    );
+  }),
 ];

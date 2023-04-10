@@ -285,8 +285,11 @@ exports[`emicheck page Matching the snapshot of the navbar 1`] = `
                 </b>
               </a>
               <button
+                aria-label="Submit"
                 class="btn float-right  btn-dark mt-2 px-4"
+                name="Submit"
                 type="submit"
+                value="Submit"
               >
                 <b>
                   Check Eligibility
